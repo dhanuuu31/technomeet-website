@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TECHNOMEET 2026 | Coordinators</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main Site CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: #333;
+            padding-top: 80px;
+        }
+
+        /* ====================== PAGE HEADER ====================== */
+        .page-header {
+            background: radial-gradient(
+                circle at top,
+                rgba(250, 204, 21, 0.08),
+                #020617 70%
+            );
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: normal;
+            color:#fff; /* RED */
+        }
+
+        .page-header h3 {
+            margin: 12px 0 6px;
+            font-size: 34px;
+            font-weight: bold;
+            color: #facc15; /* YELLOW */
+        }
+
+        .page-header p {
+            margin: 6px 0;
+            font-size: 16px;
+        }
+
+        /* ====================== CONTENT ====================== */
+        .container {
+            max-width: 1900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background: #ffffff;
+        }
+
+        h2 {
+            color: #01101a;
+            border: none;
+            padding-left: 0;
+            margin: 40px 0 25px;
+            font-size: 26px;
+            text-align: center;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #0b3c5d;
+            margin: 10px auto 0;
+        }
+
+        /* ====================== GRID ====================== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        /* Center 2 cards (Organizing Heads) */
+        .center-grid {
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+            max-width: 1300px;
+            margin: 0 auto 40px;
+        }
+
+        /* ====================== CARD ====================== */
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 32px 26px;
+            min-height: 270px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 12px 22px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            margin: 0 0 12px;
+            font-size: 18px;
+            color: #0b3c5d;
+        }
+
+        .card h3::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: #0b3c5d;
+            margin: 8px auto;
+        }
+
+        .card p {
+            margin: 6px 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ====================== STAFF LAST CARD CENTER ====================== */
+        .staff-grid .card:last-child {
+            grid-column: 2 / 3;
+        }
+
+        /* ====================== RESPONSIVE ====================== */
+        @media (max-width: 1000px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .staff-grid .card:last-child {
+                grid-column: auto;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ====================== NAVBAR ====================== -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <img src="images/technomeet_logo.png" class="logo" alt="Logo">
+      <span class="site-title">TECHNOMEET 2K26</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="coordinators.html" class="active">Coordinators</a></li>
+      <li><a href="#Sponsors">Sponsors</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="registration.html" class="Register">Register</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ====================== PAGE HEADER ====================== -->
+<section class="page-header">
+    <h1>GSMT's Parvatibai Genba Moze College of Engineering, Pune</h1>
+    <h3>TECHNOMEET - 2026</h3>
+    <p>Department - Computer, AIDS, MCA</p>
+    <p>Organises Project Competition & Codewar | 09th & 10th Feb 2026</p>
+</section>
+
+<!-- ====================== CONTENT ====================== -->
+<div class="container">
+
+    <!-- ORGANIZING HEADS -->
+    <h2>Organizing Heads</h2>
+        <div class="card-grid center-grid">
+
+        <div class="card">
+            <h3>Mr. Sachin Kharade</h3>
+            <p><strong>Designation:</strong> HOD</p>
+            <p><strong>Department:</strong> Computer & AIDS Engineering</p>
+        </div>
+        <div class="card">
+            <h3>Ms. Swati Andhale</h3>
+            <p><strong>Designation:</strong> HOD</p>
+            <p><strong>Department:</strong> MCA</p>
+        </div>
+    </div>
+
+    <!-- STAFF COORDINATORS -->
+    <h2>Staff Coordinators</h2>
+    <div class="card-grid staff-grid">
+        <div class="card"><h3>Ms. Harshada Shelke</h3><p>Overall Coordinator</p></div>
+        <div class="card"><h3>Ms. Yogita Shelke</h3><p>Technical Committee</p></div>
+        <div class="card"><h3>Mr. Raviraj Bhairat</h3><p>Codewar Coordinator</p></div>
+        <div class="card"><h3>Mr. Vishnudas Talware</h3><p>Computer Engineering</p></div>
+        <div class="card"><h3>Ms. Kalyani Zirpe</h3><p>AIDS</p></div>
+        <div class="card"><h3>Ms. Indu Jadhav</h3><p>Computer Engineering</p></div>
+        <div class="card"><h3>Ms. Pranita Sontakke</h3><p>MCA</p></div>
+        <div class="card"><h3>Ms. Priyanka Gupta</h3><p>Computer Engineering</p></div>
+        <div class="card"><h3>Ms. Jyoti Bhgata</h3><p>AIDS</p></div>
+        <div class="card"><h3>Ms. Monika Thete</h3><p>MCA</p></div>
+    </div>
+    <!-- STUDENTS -->
+    <h2>Student Coordinators</h2>
+    <div class="card-grid">
+        <div class="card"><h3>Soham Kanhore</h3><p><strong>Role:</strong> Student Coordinator Head</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Diksha Godse</h3><p><strong>Role:</strong> Student Coordinator Head</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Sudarshan Bhujbal</h3><p><strong>Role:</strong> Student Coordinator Head</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> SE</p></div>
+
+        <div class="card"><h3>Harshad Lokhande</h3><p><strong>Committee:</strong> Organizing / Codewar</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Sanjana More</h3><p><strong>Committee:</strong> Organizing / Registration</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Rohit Kharsade</h3><p><strong>Committee:</strong> Registration</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Yash Khandave</h3><p><strong>Committee:</strong> Registration</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Siddhi Kale</h3><p><strong>Committee:</strong> Registration / Rangoli</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Vanshika Pawar</h3><p><strong>Committee:</strong> Registration / Rangoli</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Vidya Thigale</h3><p><strong>Committee:</strong> Projexpo</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Aaryan Dehadray</h3><p><strong>Committee:</strong> Registration</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Pradeep Wagh</h3><p><strong>Committee:</strong> Registration</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Mrunali Patil</h3><p><strong>Committee:</strong> Projexpo</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Dhanashree Salunke</h3><p><strong>Committee:</strong> Web / Codewar</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Shradha Sutare</h3><p><strong>Committee:</strong> Web / Codewar</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Radha Chatur</h3><p><strong>Committee:</strong> Web / Codewar</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Amruta Deshmukh</h3><p><strong>Committee:</strong> Web / Codewar</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Gauri Solanke</h3><p><strong>Committee:</strong> Web / Codewar</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Sahil Bhatane</h3><p><strong>Committee:</strong> Web Team</p><p><strong>Branch:</strong> Engineering</p><p><strong>Year:</strong> BE</p></div>
+        <div class="card"><h3>Rashmi S. Waghmode</h3><p><strong>Committee:</strong> Technical / CyberShield</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Aditi Gaikwad</h3><p><strong>Committee:</strong> Technical / CyberShield</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Bhagyashree Bhosale</h3><p><strong>Committee:</strong> Technical / CyberShield</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Sayali Waje</h3><p><strong>Committee:</strong> Projexpo</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Adarsh Supekar</h3><p><strong>Committee:</strong> Marketing / Decoration</p><p><strong>Branch:</strong> Computer Engineering</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Ritesh Kanade</h3><p><strong>Committee:</strong> Marketing</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> TE</p></div>
+        <div class="card"><h3>Sameer Shimpi</h3><p><strong>Committee:</strong> Marketing</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> TE</p></div>
+        <div class="card"><h3>Aryaa Nalawade</h3><p><strong>Committee:</strong> Marketing</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> TE</p></div>
+        <div class="card"><h3>Kartik Wankhede</h3><p><strong>Committee:</strong> Marketing</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> TE</p></div>
+        <div class="card"><h3>Akash Chavan</h3><p><strong>Committee:</strong> Marketing</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> TE</p></div>
+        <div class="card"><h3>Yash Bhosale</h3><p><strong>Committee:</strong> Media & Photography</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Akash Divekar</h3><p><strong>Committee:</strong> Media & Photography</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> SE</p></div>
+        <div class="card"><h3>Tushar Chavan</h3><p><strong>Committee:</strong> Media & Photography</p><p><strong>Branch:</strong> AIDS</p><p><strong>Year:</strong> SE</p></div>
+    </div>
+</div>
+
+<!-- ====================== FOOTER ====================== -->
+<footer class="site-footer">
+  <p>
+    © 2026 <span class="yellow">Technomeet</span> |
+    Parvatibai Genba Moze College of Engineering, Pune
+  </p>
+  <div class="footer-socials">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</footer>
+
+</body>
+</html>
