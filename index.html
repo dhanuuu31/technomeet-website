@@ -102,6 +102,105 @@
   background-color: #e6e200;
 }
 
+/* =========================
+   MOBILE RESPONSIVE FIXES
+========================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background: #000;
+    text-align: center;
+  }
+
+  .nav-links li {
+    padding: 12px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* HERO SECTION */
+  .slide-content h1 {
+    font-size: 28px;
+  }
+
+  .slide-content h6 {
+    font-size: 14px;
+  }
+
+  /* HIDE HALF CIRCLE ON MOBILE */
+  .half-circle-wrapper {
+    display: none;
+  }
+
+  /* GALLERY */
+  .scroll-item {
+    flex: 0 0 260px;
+  }
+
+  .scroll-item img {
+    height: 200px;
+  }
+
+  .gallery-title {
+    font-size: 28px;
+  }
+
+  .gallery-subtitle {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  /* EVENTS */
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card {
+    height: 240px;
+  }
+
+  /* ABOUT STATS */
+  .about-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* COUNTDOWN */
+  .timer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .time-box {
+    width: 45%;
+  }
+
+  /* FOOTER */
+  .site-footer p {
+    font-size: 12px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+}
+
 </style>
 
 </head>
@@ -114,11 +213,16 @@
   <div class="nav-container">
 
     <div class="nav-left">
-      <img src="images/technomeet_logo.png" class="logo" alt="Logo">
+      <img src="technomeet_logo.png" class="logo" alt="Logo">
       <span class="site-title">TECHNOMEET 2K26</span>
     </div>
 
-    <ul class="nav-links">
+    <!-- HAMBURGER ICON (MOBILE) -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="event.html">Events</a></li>
       <li><a href="about.html">About</a></li>
@@ -132,13 +236,14 @@
   </div>
 </header>
 
+
 <!-- ======================
      HERO SLIDER
 ====================== -->
 <section class="hero-slider" id="home">
 
   <!-- SLIDE 1 -->
-  <div class="slide active" style="background-image:url('images/slide1.jpg')">
+  <div class="slide active" style="background-image:url('slide1.jpg')">
     <div class="overlay"></div>
 
     <div class="slide-content center">
@@ -158,12 +263,6 @@
         <div class="circle middle-circle">
           <div class="circle inner-circle scroll-circle">
 
-            <!-- INSIDE EACH inner-circle -->
-<div class="circle-item" data-modal="chatModal">Chat Box</div>
-<div class="circle-item" data-modal="contactModal">Contact Box</div>
-<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
-<div class="circle-item" data-modal="queryModal">Query Box</div>
-
           </div>
         </div>
       </div>
@@ -174,7 +273,7 @@
   </div>
 
   <!-- SLIDE 2 -->
-    <div class="slide" style="background-image:url('images/slide2.jpg')">
+    <div class="slide" style="background-image:url('slide2.jpg')">
     <div class="overlay"></div>
     <div class="slide-content">
       <h1><span class="highlight">CODE</span> WAR</h1>
@@ -190,13 +289,6 @@
         <div class="circle middle-circle">
           <div class="circle inner-circle scroll-circle">
 
-            <!-- INSIDE EACH inner-circle -->
-<div class="circle-item" data-modal="chatModal">Chat Box</div>
-<div class="circle-item" data-modal="contactModal">Contact Box</div>
-<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
-<div class="circle-item" data-modal="queryModal">Query Box</div>
-
-
           </div>
         </div>
       </div>
@@ -207,7 +299,7 @@
 
 
   <!-- SLIDE 3 -->
-  <div class="slide" style="background-image:url('images/slide3.jpg')">
+  <div class="slide" style="background-image:url('slide3.jpg')">
     <div class="overlay"></div>
 
     <div class="slide-content center">
@@ -225,13 +317,6 @@
         <div class="circle middle-circle">
           <div class="circle inner-circle scroll-circle">
 
-            <!-- INSIDE EACH inner-circle -->
-<div class="circle-item" data-modal="chatModal">Chat Box</div>
-<div class="circle-item" data-modal="contactModal">Contact Box</div>
-<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
-<div class="circle-item" data-modal="queryModal">Query Box</div>
-
-
           </div>
         </div>
       </div>
@@ -241,7 +326,7 @@
   </div>
 
   <!-- SLIDE 4 -->
-  <div class="slide" style="background-image:url('images/slide4.jpg')">
+  <div class="slide" style="background-image:url('slide4.jpg')">
     <div class="overlay"></div>
 
     <div class="slide-content center">
@@ -259,11 +344,6 @@
         <div class="circle middle-circle">
           <div class="circle inner-circle scroll-circle">
 
-            <!-- INSIDE EACH inner-circle -->
-<div class="circle-item" data-modal="chatModal">Chat Box</div>
-<div class="circle-item" data-modal="contactModal">Contact Box</div>
-<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
-<div class="circle-item" data-modal="queryModal">Query Box</div>
 
 
           </div>
@@ -275,7 +355,7 @@
   </div>
 
   <!-- SLIDE 5 -->
-  <div class="slide" style="background-image:url('images/slide5.webp')">
+  <div class="slide" style="background-image:url('slide5.webp')">
     <div class="overlay"></div>
 
     <div class="slide-content center">
@@ -293,12 +373,6 @@
         <div class="circle middle-circle">
           <div class="circle inner-circle scroll-circle">
 
-            <!-- INSIDE EACH inner-circle -->
-<div class="circle-item" data-modal="chatModal">Chat Box</div>
-<div class="circle-item" data-modal="contactModal">Contact Box</div>
-<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
-<div class="circle-item" data-modal="queryModal">Query Box</div>
-
 
           </div>
         </div>
@@ -309,7 +383,7 @@
   </div>
 
   <!-- SLIDE 6 -->
-  <div class="slide" style="background-image:url('images/slide6.jpg')">
+  <div class="slide" style="background-image:url('slide6.jpg')">
     <div class="overlay"></div>
 
     <div class="slide-content center">
@@ -327,11 +401,6 @@
         <div class="circle middle-circle">
           <div class="circle inner-circle scroll-circle">
 
-            <!-- INSIDE EACH inner-circle -->
-<div class="circle-item" data-modal="chatModal">Chat Box</div>
-<div class="circle-item" data-modal="contactModal">Contact Box</div>
-<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
-<div class="circle-item" data-modal="queryModal">Query Box</div>
 
 
           </div>
@@ -364,32 +433,32 @@
   <div class="scroll-slider">
     <div class="scroll-track">
       <!-- Original images -->
-      <div class="scroll-item"><img src="images/gallery/photo1.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo2.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo3.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo4.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo5.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo6.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo7.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo8.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo9.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo10.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo11.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo12.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo1.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo2.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo3.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo4.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo5.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo6.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo7.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo8.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo9.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo10.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo11.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo12.jpeg" alt=""></div>
 
       <!-- Duplicate images for smooth loop -->
-      <div class="scroll-item"><img src="images/gallery/photo1.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo2.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo3.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo4.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo5.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo6.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo7.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo8.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo9.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo10.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo11.jpeg" alt=""></div>
-      <div class="scroll-item"><img src="images/gallery/photo12.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo1.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo2.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo3.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo4.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo5.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo6.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo7.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo8.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo9.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo10.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo11.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="photo12.jpeg" alt=""></div>
     </div>
   </div>
 
@@ -471,7 +540,7 @@
   <div class="events-grid">
 
     <!-- CODE WAR -->
-    <div class="event-card" style="background-image:url('images/codewar.jpg')">
+    <div class="event-card" style="background-image:url('codewar.jpg')">
       <div class="event-overlay">
         <h3>CODE WAR</h3>
         <p>Battle with logic, speed & accuracy</p>
@@ -480,7 +549,7 @@
     </div>
 
     <!-- CYBER SHIELD -->
-    <div class="event-card" style="background-image:url('images/cyber shield.jpg')">
+    <div class="event-card" style="background-image:url('cyber shield.jpg')">
       <div class="event-overlay">
         <h3>CYBER SHIELD</h3>
         <p>Defend • Detect • Dominate</p>
@@ -489,7 +558,7 @@
     </div>
 
     <!-- MODEL EXHIBITION -->
-    <div class="event-card" style="background-image:url('images/model.jpg')">
+    <div class="event-card" style="background-image:url('model.jpg')">
       <div class="event-overlay">
         <h3>PROJECT EXPO</h3>
         <p>Innovative ideas shaping the future</p>
@@ -523,16 +592,16 @@
   </p>
 
   <div class="footer-icons">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
   </div>
 </footer>
 
 <div class="social-float">
-  <a href="#"><i class="bi bi-instagram"></i></a>
-  <a href="#"><i class="bi bi-linkedin"></i></a>
-  <a href="#"><i class="bi bi-youtube"></i></a>
+  <a href="https://www.instagram.com"><i class="bi bi-instagram"></i></a>
+  <a href="https://www.facebook.com"><i class="bi bi-linkedin"></i></a>
+  <a href="https://www.linkedin.com"><i class="bi bi-youtube"></i></a>
 </div>
 
 
@@ -547,62 +616,14 @@
 
 <script src="script.js"></script>
 
-<!-- ======================
-     INTERACTIVE MODALS
-====================== -->
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.querySelector(".nav-links");
 
-<!-- CHAT BOX -->
-<div class="tech-modal" id="chatModal">
-  <div class="tech-modal-box">
-    <span class="close" onclick="closeTechModal('chatModal')">&times;</span>
-    <h2>Live Chat</h2>
-    <div class="chat-window">
-      <p class="bot-msg">👋 Hi! How can we help you?</p>
-    </div>
-    <input type="text" placeholder="Type your message..." />
-    <button class="modal-btn">Send</button>
-  </div>
-</div>
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
 
-<!-- CONTACT BOX -->
-<div class="tech-modal" id="contactModal">
-  <div class="tech-modal-box">
-    <span class="close" onclick="closeTechModal('contactModal')">&times;</span>
-    <h2>Contact Us</h2>
-    <input id="contactName" type="text" placeholder="Your Name" />
-    <input id="contactEmail" type="email" placeholder="Your Email" />
-    <textarea id="contactMessage" placeholder="Your Message"></textarea>
-    <button class="modal-btn" id="contactSubmit">Submit</button>
-  </div>
-</div>
-
-<!-- FEEDBACK BOX -->
-<div class="tech-modal" id="feedbackModal">
-  <div class="tech-modal-box">
-    <span class="close" onclick="closeTechModal('feedbackModal')">&times;</span>
-    <h2>Feedback</h2>
-
-    <div class="stars">
-      ★ ★ ★ ★ ★
-    </div>
-
-<textarea id="feedbackText" placeholder="Write your feedback..."></textarea>
-<button class="modal-btn" id="feedbackSubmit">Send Feedback</button>
-
-  </div>
-</div>
-
-<!-- QUERY BOX -->
-<div class="tech-modal" id="queryModal">
-  <div class="tech-modal-box">
-    <span class="close" onclick="closeTechModal('queryModal')">&times;</span>
-    <h2>Ask a Query</h2>
-<input id="querySubject" type="text" placeholder="Subject" />
-<textarea id="queryText" placeholder="Your Query"></textarea>
-<button class="modal-btn" id="querySubmit">Submit Query</button>
-
-  </div>
-</div>
-
+</script>
 </body>
 </html>
