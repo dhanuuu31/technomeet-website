@@ -852,7 +852,7 @@ footer p {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("images/noise.png");
+  background: url("noise.png");
   opacity: 0.03;
 }
 
