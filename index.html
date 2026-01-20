@@ -1,0 +1,608 @@
+<!DOCTYPE html>                                                                                                                                                          here is index.html where you want to update //<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technomeet 2026</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ===== GALLERY SECTION ===== */
+.gallery-section {
+  margin-top: 100px;   
+  margin-bottom: 0px;           /* space from previous section */
+  text-align: center;
+  background-color: #ffffff;      /* white background */
+  padding: 60px 0 20px;                /* top & bottom spacing */
+}
+
+/* Title */
+.gallery-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #b30000;                 /* yellow headline */
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Subtitle */
+.gallery-subtitle {
+  font-size: 18px;
+  color: #333333;                 /* dark for white background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 40px;            /* space before slideshow */
+  letter-spacing: 0.5px;
+}
+
+/* ===== GALLERY SLIDESHOW ===== */
+.scroll-slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;                     /* remove left/right gap */
+}
+
+.scroll-track {
+  display: flex;
+  gap: 7px;
+  animation: slide 10s linear infinite;
+}
+
+.scroll-item {
+  flex: 0 0 400px;                /* large image width */
+}
+
+.scroll-item img {
+  width: 100%;
+  height: 320px;                  /* large image height */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.9s ease;
+}
+
+.scroll-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover */
+.scroll-slider:hover .scroll-track {
+  animation-play-state: paused;
+}
+
+/* ===== BUTTON ===== */
+.scroll-button-container {
+  text-align: center;
+  margin-top: 60px;               /* more space from slideshow */
+}
+
+.scroll-button {
+  background-color: #f1ed0e;
+  color: #0b0808;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 0;               /* square button */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: #e6e200;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- ======================
+     HEADER / NAVBAR
+====================== -->
+<header class="navbar">
+  <div class="nav-container">
+
+    <div class="nav-left">
+      <img src="images/technomeet_logo.png" class="logo" alt="Logo">
+      <span class="site-title">TECHNOMEET 2K26</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="coordinators.html">Coordinators</a></li>
+      <li><a href="#Sponsors">Sponsors</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="registration.html" class="Register">Register</a></li>
+    </ul>
+
+  </div>
+</header>
+
+<!-- ======================
+     HERO SLIDER
+====================== -->
+<section class="hero-slider" id="home">
+
+  <!-- SLIDE 1 -->
+  <div class="slide active" style="background-image:url('images/slide1.jpg')">
+    <div class="overlay"></div>
+
+    <div class="slide-content center">
+      <h1>
+        TECHNOMEET<span class="highlight">TECHNOMEET</span> 2026
+      </h1>
+      <h6>WHERE <span id="changing-word">PASSION</span> MEETS CREATIVITY</h6>
+
+    </div>
+
+    <!-- ===============================
+         HALF CIRCLE SCROLL UI
+    ================================ -->
+    <div class="half-circle-wrapper">
+
+      <div class="circle outer-circle">
+        <div class="circle middle-circle">
+          <div class="circle inner-circle scroll-circle">
+
+            <!-- INSIDE EACH inner-circle -->
+<div class="circle-item" data-modal="chatModal">Chat Box</div>
+<div class="circle-item" data-modal="contactModal">Contact Box</div>
+<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
+<div class="circle-item" data-modal="queryModal">Query Box</div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END HALF CIRCLE -->
+
+  </div>
+
+  <!-- SLIDE 2 -->
+    <div class="slide" style="background-image:url('images/slide2.jpg')">
+    <div class="overlay"></div>
+    <div class="slide-content">
+      <h1><span class="highlight">CODE</span> WAR</h1>
+      <h6>COMPETE WITH THE BEST MINDS</h6>
+    </div>
+
+        <!-- ===============================
+         HALF CIRCLE SCROLL UI
+    ================================ -->
+    <div class="half-circle-wrapper">
+
+      <div class="circle outer-circle">
+        <div class="circle middle-circle">
+          <div class="circle inner-circle scroll-circle">
+
+            <!-- INSIDE EACH inner-circle -->
+<div class="circle-item" data-modal="chatModal">Chat Box</div>
+<div class="circle-item" data-modal="contactModal">Contact Box</div>
+<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
+<div class="circle-item" data-modal="queryModal">Query Box</div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END HALF CIRCLE -->
+  </div>
+
+
+  <!-- SLIDE 3 -->
+  <div class="slide" style="background-image:url('images/slide3.jpg')">
+    <div class="overlay"></div>
+
+    <div class="slide-content center">
+      <h1>
+        <span class="highlight">CYBER</span> SHIELD
+      </h1>
+      <h6>DEFEND • DETECT • DOMINATE</h6>
+    </div>
+        <!-- ===============================
+         HALF CIRCLE SCROLL UI
+    ================================ -->
+    <div class="half-circle-wrapper">
+
+      <div class="circle outer-circle">
+        <div class="circle middle-circle">
+          <div class="circle inner-circle scroll-circle">
+
+            <!-- INSIDE EACH inner-circle -->
+<div class="circle-item" data-modal="chatModal">Chat Box</div>
+<div class="circle-item" data-modal="contactModal">Contact Box</div>
+<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
+<div class="circle-item" data-modal="queryModal">Query Box</div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END HALF CIRCLE -->
+  </div>
+
+  <!-- SLIDE 4 -->
+  <div class="slide" style="background-image:url('images/slide4.jpg')">
+    <div class="overlay"></div>
+
+    <div class="slide-content center">
+      <h1>
+        <span class="highlight">PROJECT</span> EXPO
+      </h1>
+      <h6>IDEAS THAT SHAPE THE FUTURE</h6>
+    </div>
+        <!-- ===============================
+         HALF CIRCLE SCROLL UI
+    ================================ -->
+    <div class="half-circle-wrapper">
+
+      <div class="circle outer-circle">
+        <div class="circle middle-circle">
+          <div class="circle inner-circle scroll-circle">
+
+            <!-- INSIDE EACH inner-circle -->
+<div class="circle-item" data-modal="chatModal">Chat Box</div>
+<div class="circle-item" data-modal="contactModal">Contact Box</div>
+<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
+<div class="circle-item" data-modal="queryModal">Query Box</div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END HALF CIRCLE -->
+  </div>
+
+  <!-- SLIDE 5 -->
+  <div class="slide" style="background-image:url('images/slide5.webp')">
+    <div class="overlay"></div>
+
+    <div class="slide-content center">
+      <h1>
+        <span class="highlight">INNOVATE</span> & INSPIRE
+      </h1>
+      <h6>SHOWCASE YOUR ENGINEERING TALENT</h6>
+    </div>
+        <!-- ===============================
+         HALF CIRCLE SCROLL UI
+    ================================ -->
+    <div class="half-circle-wrapper">
+
+      <div class="circle outer-circle">
+        <div class="circle middle-circle">
+          <div class="circle inner-circle scroll-circle">
+
+            <!-- INSIDE EACH inner-circle -->
+<div class="circle-item" data-modal="chatModal">Chat Box</div>
+<div class="circle-item" data-modal="contactModal">Contact Box</div>
+<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
+<div class="circle-item" data-modal="queryModal">Query Box</div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END HALF CIRCLE -->
+  </div>
+
+  <!-- SLIDE 6 -->
+  <div class="slide" style="background-image:url('images/slide6.jpg')">
+    <div class="overlay"></div>
+
+    <div class="slide-content center">
+      <h1>
+        <span class="highlight">CONNECT</span> & GROW
+      </h1>
+      <h6>LEARN • NETWORK • CELEBRATE</h6>
+    </div>
+        <!-- ===============================
+         HALF CIRCLE SCROLL UI
+    ================================ -->
+    <div class="half-circle-wrapper">
+
+      <div class="circle outer-circle">
+        <div class="circle middle-circle">
+          <div class="circle inner-circle scroll-circle">
+
+            <!-- INSIDE EACH inner-circle -->
+<div class="circle-item" data-modal="chatModal">Chat Box</div>
+<div class="circle-item" data-modal="contactModal">Contact Box</div>
+<div class="circle-item" data-modal="feedbackModal">Feedback Box</div>
+<div class="circle-item" data-modal="queryModal">Query Box</div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END HALF CIRCLE -->
+  </div>
+
+  <!-- SQUARE DOTS -->
+  <div class="dots square">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+</section>
+
+<!-- ======================
+     GALLERY SECTION
+====================== -->
+<section class="gallery-section">
+  <h2 class="gallery-title">GALLERY - PGSMCOE</h2>
+  <p class="gallery-subtitle">A glimpse of our vibrant campus life, technical fests, cultural moments, innovation, teamwork, and unforgettable memories </p>
+
+  <div class="scroll-slider">
+    <div class="scroll-track">
+      <!-- Original images -->
+      <div class="scroll-item"><img src="images/gallery/photo1.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo2.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo3.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo4.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo5.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo6.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo7.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo8.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo9.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo10.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo11.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo12.jpeg" alt=""></div>
+
+      <!-- Duplicate images for smooth loop -->
+      <div class="scroll-item"><img src="images/gallery/photo1.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo2.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo3.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo4.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo5.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo6.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo7.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo8.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo9.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo10.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo11.jpeg" alt=""></div>
+      <div class="scroll-item"><img src="images/gallery/photo12.jpeg" alt=""></div>
+    </div>
+  </div>
+
+  <!-- View Gallery Button -->
+  <div class="scroll-button-container">
+    <button class="scroll-button" onclick="window.location.href='gallery.html'">VIEW GALLERY</button>
+  </div>
+</section>
+
+<!-- ===============================
+     MODAL POPUP
+================================ -->
+<div class="modal" id="eventModal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <img id="modalImg">
+    <p>
+      Detailed information about this event will appear here.
+    </p>
+    <a href="#" class="btn-red">MORE DETAILS</a>
+  </div>
+</div>
+
+
+<!-- ======================
+     ABOUT SECTION
+====================== -->
+<section class="about-experience">
+  <div class="about-overlay">
+
+    <h2 class="about-title">THE TECHNOMEET EXPERIENCE</h2>
+    <p class="about-subtitle">
+      A platform where innovation, technology, and young minds come together
+    </p>
+
+    <div class="about-stats">
+
+      <div class="stat-box">
+        <h3>10+</h3>
+        <p>TECHNICAL EVENTS</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>500+</h3>
+        <p>PARTICIPANTS</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>30+</h3>
+        <p>COLLEGES</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>2 DAYS</h3>
+        <p>OF INNOVATION</p>
+      </div>
+
+    </div>
+
+    <div class="about-actions">
+      <a href="event.html" class="about-btn">EXPLORE EVENTS →</a>
+      <a href="contact.html" class="about-btn outline">CONTACT US →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================
+     EVENTS
+====================== -->
+
+<section class="events" id="events">
+  <h2>Events</h2>
+
+  <h2 class="section-title">WHAT’S BUZZING @ TECHNOMEET</h2>
+  <p class="section-subtitle">Explore the flagship technical events of Technomeet 2026</p>
+
+  <div class="events-grid">
+
+    <!-- CODE WAR -->
+    <div class="event-card" style="background-image:url('images/codewar.jpg')">
+      <div class="event-overlay">
+        <h3>CODE WAR</h3>
+        <p>Battle with logic, speed & accuracy</p>
+        <a href="codewar.html" class="event-btn">CLICK HERE FOR DETAILS</a>
+      </div>
+    </div>
+
+    <!-- CYBER SHIELD -->
+    <div class="event-card" style="background-image:url('images/cyber shield.jpg')">
+      <div class="event-overlay">
+        <h3>CYBER SHIELD</h3>
+        <p>Defend • Detect • Dominate</p>
+        <a href="cybershield.html" class="event-btn">CLICK HERE FOR DETAILS</a>
+      </div>
+    </div>
+
+    <!-- MODEL EXHIBITION -->
+    <div class="event-card" style="background-image:url('images/model.jpg')">
+      <div class="event-overlay">
+        <h3>PROJECT EXPO</h3>
+        <p>Innovative ideas shaping the future</p>
+        <a href="projectexpo.html" class="event-btn">CLICK HERE FOR DETAILS</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================
+     COUNTDOWN
+====================== -->
+<section class="countdown premium-countdown">
+  <h2 class="countdown-title">Event Starts In</h2>
+
+  <div class="timer">
+    <div class="time-box"><span id="days">00</span><p>DAYS</p></div>
+    <div class="time-box"><span id="hours">00</span><p>HOURS</p></div>
+    <div class="time-box"><span id="minutes">00</span><p>MINUTES</p></div>
+    <div class="time-box seconds-box"><span id="seconds">00</span><p>SECONDS</p></div>
+  </div>
+</section>
+
+<!-- ======================
+     FOOTER
+====================== -->
+<footer class="site-footer">
+  <p>
+    © 2026 <span>Technomeet</span> | Parvatibai Genba Moze College of Engineering, Pune
+  </p>
+
+  <div class="footer-icons">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</footer>
+
+<div class="social-float">
+  <a href="#"><i class="bi bi-instagram"></i></a>
+  <a href="#"><i class="bi bi-linkedin"></i></a>
+  <a href="#"><i class="bi bi-youtube"></i></a>
+</div>
+
+
+<!-- BACK TO TOP -->
+<button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+<div class="floating-buttons">
+  <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+<script src="script.js"></script>
+
+<!-- ======================
+     INTERACTIVE MODALS
+====================== -->
+
+<!-- CHAT BOX -->
+<div class="tech-modal" id="chatModal">
+  <div class="tech-modal-box">
+    <span class="close" onclick="closeTechModal('chatModal')">&times;</span>
+    <h2>Live Chat</h2>
+    <div class="chat-window">
+      <p class="bot-msg">👋 Hi! How can we help you?</p>
+    </div>
+    <input type="text" placeholder="Type your message..." />
+    <button class="modal-btn">Send</button>
+  </div>
+</div>
+
+<!-- CONTACT BOX -->
+<div class="tech-modal" id="contactModal">
+  <div class="tech-modal-box">
+    <span class="close" onclick="closeTechModal('contactModal')">&times;</span>
+    <h2>Contact Us</h2>
+    <input id="contactName" type="text" placeholder="Your Name" />
+    <input id="contactEmail" type="email" placeholder="Your Email" />
+    <textarea id="contactMessage" placeholder="Your Message"></textarea>
+    <button class="modal-btn" id="contactSubmit">Submit</button>
+  </div>
+</div>
+
+<!-- FEEDBACK BOX -->
+<div class="tech-modal" id="feedbackModal">
+  <div class="tech-modal-box">
+    <span class="close" onclick="closeTechModal('feedbackModal')">&times;</span>
+    <h2>Feedback</h2>
+
+    <div class="stars">
+      ★ ★ ★ ★ ★
+    </div>
+
+<textarea id="feedbackText" placeholder="Write your feedback..."></textarea>
+<button class="modal-btn" id="feedbackSubmit">Send Feedback</button>
+
+  </div>
+</div>
+
+<!-- QUERY BOX -->
+<div class="tech-modal" id="queryModal">
+  <div class="tech-modal-box">
+    <span class="close" onclick="closeTechModal('queryModal')">&times;</span>
+    <h2>Ask a Query</h2>
+<input id="querySubject" type="text" placeholder="Subject" />
+<textarea id="queryText" placeholder="Your Query"></textarea>
+<button class="modal-btn" id="querySubmit">Submit Query</button>
+
+  </div>
+</div>
+
+</body>
+</html>

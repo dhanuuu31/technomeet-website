@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Technomeet 2026</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="event.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --yellow: #ffd400;
+  --navy: #0d1b3d;
+  --muted: #b5b5b5;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('images/evback.jpg') no-repeat center center;
+  background-size: cover; /* make the image cover entire page */
+  background-attachment: fixed; /* optional: makes it stay fixed when scrolling */
+  color: var(--white);
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+
+/* ===== HEADER SPACING ===== */
+header.navbar + .wrapper {
+  padding-top: 80px; /* space below header */
+}
+
+/* ===== WRAPPER ===== */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(
+    135deg,
+    rgba(250, 204, 21, 0.08) 0%, 
+    #020617 100%
+  );
+  border-radius: 15px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+
+.hero h1 {
+  color: var(--yellow);
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background-color: #020617;
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid var(--yellow);
+}
+
+/* ===== HEADINGS ===== */
+.card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--yellow);
+}
+
+.card h2::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: var(--yellow);
+}
+
+/* ===== FORM ===== */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--white);
+  background-color: var(--black);
+  color: var(--white);
+  margin-bottom: 18px;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--muted);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--yellow);
+}
+
+/* ===== BUTTON ===== */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  background-color: var(--yellow);
+  border: none;
+  color: var(--black);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e6c200;
+}
+
+/* ===== INFO BOX ===== */
+.info-item {
+  background-color: #020617;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-left: 4px solid var(--yellow);
+  color: var(--white);
+}
+
+/* ===== QUICK LINKS BUTTONS ===== */
+.quick a {
+  display: block;
+  text-decoration: none;
+  color: red;                  /* text red */
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #ffffff;   /* white background */
+  margin-bottom: 10px;
+  text-align: center;
+  border: 1px solid red;      /* optional: border matches text */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.quick a:hover {
+  background-color: var(--yellow); /* yellow background on hover */
+  color: black;                     /* text black on hover */
+  border-color: black;              /* optional: border changes too */
+}
+
+
+/* ===== FAQ ===== */
+.faq {
+  margin-top: 60px;
+}
+
+.faq h2 {
+  margin-bottom: 30px;
+  color: var(--yellow);
+}
+
+.faq-item {
+  background-color: #020617;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--yellow);
+}
+
+.faq-item h4 {
+  margin-bottom: 8px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <img src="images/technomeet_logo.png" class="logo" alt="Logo">
+      <span class="site-title">TECHNOMEET 2K26</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="coordinators.html">Coordinators</a></li>
+      <li><a href="#Sponsors">Sponsors</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="registration.html" class="Register">Register</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrapper">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Get in Touch</h1>
+    <p>
+      Have questions about Technomeet? Need assistance with registration?
+      Want to become a sponsor? Fill out the form below and send us a message. Your email client will open automatically.
+    </p>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- CONTACT FORM -->
+    <div class="card">
+      <h2>📨 Send us a Message</h2>
+
+      <form action="mailto:technomeet@gmail.com" method="GET" enctype="text/plain">
+        <label>Full Name *</label>
+        <input type="text" name="Name" placeholder="Enter your full name" required>
+
+        <label>Email Address *</label>
+        <input type="email" name="Email" placeholder="your.email@example.com" required>
+
+        <label>Phone Number</label>
+        <input type="text" name="Phone" placeholder="+91 1234567890">
+
+        <label>Subject *</label>
+        <input type="text" name="Subject" placeholder="Your Subject" required>
+
+        <label>Message *</label>
+        <textarea name="Message" rows="5" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit">📨 Send Message</button>
+      </form>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div>
+      <div class="card">
+        <h2>📍 Contact Information</h2>
+
+        <div class="info-item">
+          <strong>🏢 Address</strong><br>
+          Parvatibai Genba Sopanrao Moze College of Engineering, Wagholi, Pune
+        </div>
+
+        <div class="info-item">
+          <strong>📧 Email</strong><br>
+          technomeetpgmcoe@gmail.com
+        </div>
+
+        <div class="info-item">
+          <strong>📞 Phone</strong><br>
+          +91 86050 05710 /
+          +91 70206 00321
+        </div>
+      </div>
+
+      <div class="card quick" style="margin-top:20px;">
+        <h2>🎯 Quick Links</h2>
+        <a href="registration.html">Register for Technomeet</a>
+        <a href="#">Learn More About Event</a>
+        <a href="event.html">View Events</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h4>How do I register for Technomeet?</h4>
+      <p>You can register through our registration page.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>What is the registration deadline?</h4>
+      <p>Registration closes soon. Early registration is recommended.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Is there a registration fee?</h4>
+      <p>Please contact us for registration fee details.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Can I participate remotely?</h4>
+      <p>Preliminary rounds may be online. Final rounds are on campus.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>
+    © 2026 <span class="highlight-yellow">Technomeet</span> |
+    Parvatibai Genba Moze College of Engineering, Pune
+  </p>
+
+  <div class="footer-socials">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Technomeet 2026</title>
+<meta name="description" content="Technomeet is the official cultural fest of Parvatibai Genba Moze College. Register for events, view leaderboard, gallery, sponsors and more.">
+
+<!-- Google Fonts -->
+ <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            fontFamily: {
+                'inter': ['Inter', 'sans-serif'],
+            },
+            colors: {
+                'primary': '#FFD700',
+                'secondary': '#000000',
+                'accent': '#1a1a1a',
+                'gold': '#FFD700',
+                'darkgold': '#B8860B',
+            }
+        }
+    }
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body { font-family:'Inter', sans-serif; background-color:#000; color:#e5e5e5; line-height:1.6; }
+.text-gold{color:#FFD700;}
+.btn-gold{
+    display:inline-block;
+    background:#FFD700;
+    color:#000;
+    padding:0.9rem 2rem;
+    border-radius:10px;
+    font-weight:600;
+    font-size:1.1rem;
+    text-decoration:none;
+    transition:transform 0.3s ease;
+}
+.btn-gold:hover{background:#B8860B; transform:scale(1.05);}
+h1,h2,h3,h4,h5,h6{color:#FFD700;}
+p{color:#b3b3b3;}
+
+/* Image Size Classes */
+.img-small { width: 150px; height: auto; }
+.img-medium { width: 250px; height: auto; }
+.img-large { width: 400px; height: auto; }
+</style>
+</head>
+
+<body>
+
+<!-- ====================== HEADER / NAVBAR ====================== -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <img src="images/technomeet_logo.png" class="logo" alt="Logo">
+      <span class="site-title">TECHNOMEET 2K26</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="coordinators.html">Coordinators</a></li>
+      <li><a href="#Sponsors">Sponsors</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="registration.html" class="Register">Register</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ====================== HERO ====================== -->
+<section class="pt-32 pb-20 text-center"
+  style="background: radial-gradient(circle at top, rgba(250,204,21,0.08), #020617 70%);">
+
+  <h1 class="text-3xl md:text-4xl font-bold mb-6 text-gold">
+    About Technomeet
+  </h1>
+
+  <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-4">
+    An iconic college fest bringing together Culture, Creativity, and Competition.
+    Technomeet is a platform where students showcase their talents across diverse technical and cultural events,
+    fostering innovation, teamwork, and unforgettable experiences for everyone involved.
+  </p>
+
+
+  <a href="event.html" class="btn-gold text-lg">
+    Explore Events
+  </a>
+
+</section>
+
+<!-- OUR STORY -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-12 items-center">
+
+    <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-black">
+            Our Story
+        </h2>
+
+        <p class="text-gray-700 mb-6 leading-relaxed">
+            This festival represents the coming together of Parvatibai Genba Moze College’s vibrant cultural and technical traditions. Over the years, various events within the college — from tech fests to cultural showcases and competitions — have developed their own unique identity and legacy. <strong>Technomeet</strong> embodies the spirit of innovation, creativity, and excellence.
+        </p>
+
+        <p class="text-gray-700 mb-6 leading-relaxed">
+            By uniting these diverse events under one banner, Technomeet honors the college’s rich heritage while fostering a forward-looking vision that encourages collaboration, cultural enrichment, and technological advancement.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center sm:space-x-8 mt-8 space-y-4 sm:space-y-0">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-black">18+</div>
+                <div class="text-gray-600">Years of Legacy</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-black">5K+</div>
+                <div class="text-gray-600">Students Participated</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-black">100+</div>
+                <div class="text-gray-600">Events & Competitions</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-gradient-to-br from-gold/10 to-darkgold/10 rounded-2xl p-8 border border-gold/30 text-center">
+        <img src="images/technomeet_logo.png" class="img-medium object-contain mx-auto mb-6" alt="Technomeet Vision Logo">
+        <h3 class="text-2xl font-bold mb-4 text-black">Vision</h3>
+        <p class="text-gray-700">
+            To inspire and unite students through creativity, innovation, and collaboration, creating a vibrant platform where talent meets opportunity.
+        </p>
+    </div>
+
+</div>
+</section>
+
+
+<!-- ABOUT COLLEGE -->
+<section
+  class="py-20 text-center bg-cover bg-center relative"
+  style="background-image: url('images/evback.jpg');"
+>
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/75"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 px-6">
+
+<h2 class="text-3xl md:text-4xl font-bold mb-8 text-gold">About Parvatibai Genba Moze College</h2>
+<p class="max-w-4xl mx-auto mb-6 text-gray-300 leading-relaxed">
+Parvatibai Genba Moze College of Engineering (PGMCOE), Wagholi, Pune, is a private technical institution established in 2006 under the auspices of the Genba Sopanrao Moze Trust, founded by Shri Rambhau Moze. The college is affiliated with Savitribai Phule Pune University and approved by the All India Council for Technical Education (AICTE), with accreditation from the National Assessment and Accreditation Council (NAAC). Located on a sprawling campus in Wagholi, the college offers undergraduate and postgraduate programs in engineering, information technology, and management, combining theoretical learning with practical exposure. According to aggregated reviews from students and users, PGMCOE has an overall rating of 4.5 out of 5, with positive feedback on faculty support, infrastructure, and placement assistance, while also noting areas for continued development in certain facilities and resources.
+</p>
+
+<div class="flex justify-center">
+    <img src="images/college.jpeg" alt="PGMCOE College Logo" class="img-large object-contain">
+</div>
+
+<p class="max-w-4xl mx-auto mt-4 text-gray-300 leading-relaxed">
+<strong>Location:</strong> Gate No. 2181, Wagholi, Pune, Maharashtra – 412107 | 
+<strong>Phone:</strong> +91‑020‑27050937 | 
+<strong>Website:</strong> <a href="https://www.pgmozecoepune.in/" class="text-gold underline">pgmozecoepune.in</a>
+</p>
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer class="site-footer">
+  <p>
+    © 2026 <span class="yellow">Technomeet</span> |
+    Parvatibai Genba Moze College of Engineering, Pune
+  </p>
+
+  <div class="footer-socials">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</footer>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+    });
+});
+</script>
+
+</body>
+</html>
