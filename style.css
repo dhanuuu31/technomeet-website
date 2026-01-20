@@ -546,7 +546,7 @@ footer p {
 .about-experience {
   position: relative;
   height: 520px;
-  background: url("images/gallery/photo10.jpeg") center/cover no-repeat;
+  background: url("photo10.jpeg") center/cover no-repeat;
 }
 
 .about-experience::before {
