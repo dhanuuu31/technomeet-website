@@ -212,6 +212,45 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+/* ===== FOOTER ===== */
+.site-footer {
+  background-color: #020617;
+  padding: 40px 20px;        /* increases footer height */
+  text-align: center;
+  margin-top: 80px;
+  border-top: 2px solid var(--yellow);
+}
+
+.site-footer p {
+  font-size: 16px;          /* larger text */
+  margin-bottom: 20px;
+  color: var(--white);
+  line-height: 1.6;
+}
+
+.site-footer span {
+  color: var(--yellow);
+  font-weight: 600;
+}
+
+/* ===== FOOTER ICONS ===== */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;                /* space between icons */
+}
+
+.footer-icons a {
+  color: var(--white);
+  font-size: 26px;          /* bigger icons */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: var(--yellow);
+  transform: scale(1.2);
+}
+
 </style>
 </head>
 

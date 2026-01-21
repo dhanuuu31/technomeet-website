@@ -1040,82 +1040,28 @@
   position: relative;
 }
 
-/* Dropdown menu hidden by default */
+/* ===== DROPDOWN MENU ===== */
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
+  display: none;
   position: absolute;
+  background: #020617;
+  min-width: 200px;
   top: 100%;
   left: 0;
-  background-color: #111;
-  min-width: 180px;
-  display: none;
-  flex-direction: column;
-  border-radius: 6px;
-  padding: 8px 0;
-  z-index: 1000;
+  border-radius: 8px;
+  z-index: 999;
 }
 
-/* Dropdown links */
-.dropdown-menu li a {
-  padding: 10px 16px;
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-/* Hover effect */
-.dropdown-menu li a:hover {
-  background-color: #f5c400;
-  color: #000;
-}
-
-/* Show dropdown on hover */
+/* desktop hover */
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* Caret spacing */
-.dropdown-toggle i {
-  margin-left: 6px;
-  font-size: 12px;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background: #111;
-  color: white;
-}
-.navbar .logo { font-size: 1.5rem; font-weight: bold; }
-.nav-menu { display: flex; gap: 15px; list-style: none; }
-.nav-menu li a { color: white; text-decoration: none; font-size: 1rem; }
-.menu-toggle { display: none; flex-direction: column; cursor: pointer; }
-.menu-toggle .bar { height: 3px; width: 25px; background: white; margin: 4px 0; }
-
-/* Mobile */
-@media only screen and (max-width: 768px) {
-  .menu-toggle { display: flex; }
-  .nav-menu { display: none; flex-direction: column; width: 100%; background: #111; }
-  .nav-menu.active { display: flex; }
-  .nav-menu li { text-align: center; padding: 10px; }
-}
-
-/* Sections */
-section, .container {
-  max-width: 100%;
-  padding: 15px;
-  box-sizing: border-box;
-}
-
-/* Images */
-img { max-width: 100%; height: auto; }
-
-/* Text scaling */
-@media only screen and (max-width: 768px) {
-  h1, h2, h3 { font-size: 90%; }
-  p { font-size: 14px; }
-  button { width: 100%; }
+/* mobile click support */
+.dropdown.open .dropdown-menu {
+  display: block;
 }
