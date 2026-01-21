@@ -13,21 +13,37 @@
 <!-- ======================
      HEADER / NAVBAR
 ====================== -->
-<nav class="navbar">
-  <div class="logo">Technomeet</div>
-  <div class="menu-toggle" id="mobile-menu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>
-  <ul class="nav-menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="event.html">Events</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+<header class="navbar">
+  <div class="nav-container">
 
+    <div class="nav-left">
+      <img src="technomeet_logo.png" class="logo" alt="Logo">
+      <span class="site-title">TECHNOMEET 2K26</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+  <a href="event.html" class="dropdown-toggle">
+    Events <i class="fas fa-caret-down"></i>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a href="event.html">All Events</a></li>
+    <li><a href="codewar.html">CodeWar</a></li>
+    <li><a href="cybershield.html">Cyber Shield</a></li>
+    <li><a href="projectexpo.html">Project Expo</a></li>
+  </ul>
+</li>
+
+      <li><a href="about.html">About</a></li>
+      <li><a href="coordinators.html">Coordinators</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="registration.html" class="Register">Register</a></li>
+    </ul>
+
+  </div>
+</header>
 
 <section class="codewar-hero">
   <div class="codewar-container">
@@ -59,7 +75,6 @@
         <li><strong>Date:</strong> Feb 9th, 2026</li>
         <li><strong>Venue:</strong> PGSMCOE</li>
         <li><strong>Tracks:</strong> Individual</li>
-        <li><strong>Prize Pool:</strong> 1st - ₹3000 & 2nd - ₹2000</li>
       </ul>
     </div>
 
@@ -202,25 +217,11 @@
 
       <div class="prize-card gold">
         <i class="fas fa-trophy"></i>
-        <h3>1st Prize</h3>
-        <p>₹3,000 Cash Prize</p>
-        <span>+ Trophy & Certificate of Excellence</span>
+        <h3>Prizes</h3>
+        <p>Trophy</p>
+        <span>Certificate and Cash Prize</span>
       </div>
 
-      <div class="prize-card silver">
-        <i class="fas fa-medal"></i>
-        <h3>2nd Prize</h3>
-        <p>₹2,000 Cash Prize</p>
-        <span>+ Certificate of Excellence</span>
-      </div>
-
-    </div>
-
-    <div class="prize-extra">
-      <p>
-        🎓 <strong>All participants</strong> will receive a Certificate of Participation. <br>
-        🌟 Special recognition for outstanding performance in coding rounds.
-      </p>
     </div>
 
   </div>
@@ -256,14 +257,6 @@
   </div>
 </footer>
 </section>
-<script>
-const menuToggle = document.getElementById('mobile-menu');
-const navMenu = document.querySelector('.nav-menu');
-
-menuToggle.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-});
-</script>
 
 
 </body>
