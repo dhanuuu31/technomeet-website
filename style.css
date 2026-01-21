@@ -1483,44 +1483,43 @@ body{
 
 /* MENU TOGGLE BUTTON (MOBILE) */
 .menu-toggle {
-  display: none;
-  font-size: 22px;
-  cursor: pointer;
-  color: #ffd200;
-  transition: color 0.3s ease;
+  background: red; /* temporary highlight */
+  width: 50px;
+  height: 50px;
+  position: relative;
+  z-index: 1000;
 }
-
 .menu-toggle:hover {
   color: #fff176;
 }
 
-/* ======================
-   MOBILE RESPONSIVE
-====================== */
-@media(max-width: 900px){
-  .menu-toggle {
-    display: block;
-  }
-
+/* Hide nav links on mobile by default */
+@media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #000;
+    gap: 10px;
     position: absolute;
-    top: 70px;
-    right: 0;
+    top: 60px; /* below navbar */
+    left: 0;
     width: 100%;
-    padding: 20px;
-    gap: 0;
+    background-color: #fff;
+    padding: 10px 0;
+    z-index: 999; /* ensure it’s on top */
   }
 
+  /* Show menu when toggled */
   .nav-links.show {
     display: flex;
   }
 
-  .nav-links li {
-    margin-bottom: 15px;
+  /* Ensure menu toggle is visible */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    z-index: 1000;
   }
+}
 
   /* Hide dropdown hover on mobile, make it click-based if needed */
   .dropdown-menu {
