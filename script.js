@@ -49,7 +49,7 @@ if (menuToggle && navLinks) {
 // ======================
 // COUNTDOWN TIMER (PREMIUM & SAFE)
 // ======================
-const eventDate = new Date("February 9, 2026 09:00:00 GMT+0530").getTime();
+const eventDate = new Date("2026-03-01T09:00:00").getTime();
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
@@ -398,13 +398,4 @@ autoScroll();
 slider.addEventListener('wheel', (e)=>{
   e.preventDefault();
   slider.scrollLeft += e.deltaY;
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
-
-  menuToggle?.addEventListener("click", () => {
-    navLinks?.classList.toggle("show");
-  });
 });
