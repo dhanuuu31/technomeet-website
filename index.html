@@ -100,46 +100,6 @@
 .scroll-button:hover {
   background-color: #e6e200;
 }
-/* Navbar base */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #111;
-  color: white;
-}
-.navbar .logo { font-size: 1.5rem; font-weight: bold; }
-.navbar ul { display: flex; list-style: none; gap: 20px; }
-.navbar ul li a { color: white; text-decoration: none; }
-
-/* Mobile menu toggle */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-.menu-toggle .bar {
-  height: 3px;
-  width: 25px;
-  background-color: white;
-  margin: 4px 0;
-  transition: 0.3s;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .menu-toggle { display: flex; }
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #111;
-  }
-  .navbar ul.active { display: flex; }
-  .navbar ul li { text-align: center; padding: 10px 0; }
-}
-
 
 </style>
 
@@ -155,21 +115,40 @@ document.getElementById("menuToggle")?.addEventListener("click", () => {
 <!-- ======================
      HEADER / NAVBAR
 ====================== -->
-<nav class="navbar">
-  <div class="logo">Technomeet</div>
-  <div class="menu-toggle" id="mobile-menu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>
-  <ul class="nav no-search">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#events">Events</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<header class="navbar">
+  <div class="menu-toggle" id="menuToggle">
+  <i class="fas fa-bars"></i>
+</div>
 
+  <div class="nav-container">
+
+    <div class="nav-left">
+      <img src="technomeet_logo.png" class="logo" alt="Logo">
+      <span class="site-title">TECHNOMEET 2K26</span>
+    </div>
+<ul class="nav-links" id="navLinks">
+
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+  <a href="event.html" class="dropdown-toggle">
+    Events <i class="fas fa-caret-down"></i>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a href="event.html">All Events</a></li>
+    <li><a href="codewar.html">CodeWar</a></li>
+    <li><a href="cybershield.html">Cyber Shield</a></li>
+    <li><a href="projectexpo.html">Project Expo</a></li>
+  </ul>
+</li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="coordinators.html">Coordinators</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="registration.html" class="Register">Register</a></li>
+    </ul>
+
+  </div>
+</header>
 
 <!-- ======================
      HERO SLIDER
@@ -514,40 +493,65 @@ document.getElementById("menuToggle")?.addEventListener("click", () => {
   </div>
 </section>
 
+<!-- ======================
+     FOOTER
+====================== -->
 <footer class="site-footer">
   <p>
     © 2026 <span>Technomeet</span> | Parvatibai Genba Moze College of Engineering, Pune
   </p>
 
-  <div class="footer-icons">
-    <a href="https://www.instagram.com/technomeet_pgmcoe?igsh=MTZycWkyejgwYWZ1NQ==" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="mailto:technomeetpgmcoe@gmail.com">
-      <i class="fas fa-envelope"></i>
-    </a>
-    <a href="contact.html">
-      <i class="fas fa-address-book"></i>
-    </a>
-  </div>
-</footer>
-
-<!-- FLOATING SOCIAL BUTTONS -->
-<div class="floating-buttons">
-  <a href="https://www.instagram.com/technomeet_pgmcoe?igsh=MTZycWkyejgwYWZ1NQ==" target="_blank">
+<div class="footer-icons">
+  <a href="https://www.instagram.com/technomeet_pgmcoe?igsh=MTZycWkyejgwYWZ1NQ=="
+     target="_blank"
+     class="icon-tooltip"
+     data-tooltip="Instagram">
     <i class="fab fa-instagram"></i>
   </a>
-  <a href="mailto:technomeetpgmcoe@gmail.com">
+
+  <a href="mailto:technomeetpgmcoe@gmail.com"
+     class="icon-tooltip"
+     data-tooltip="Email">
     <i class="fas fa-envelope"></i>
   </a>
-  <a href="contact.html">
-    <i class="fas fa-phone"></i>
+
+  <a href="contact.html"
+     class="icon-tooltip"
+     data-tooltip="Contact Us">
+    <i class="fas fa-address-book"></i>
   </a>
 </div>
 
+
+</div>
+
+</div>
+
+</footer>
+
+
+<div class="social-float">
+  <a href="https://www.instagram.com/technomeet_pgmcoe?igsh=MTZycWkyejgwYWZ1NQ=="
+     target="_blank"
+     class="icon-tooltip"
+     data-tooltip="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="contact.html"
+     class="icon-tooltip"
+     data-tooltip="Contact Us">
+    <i class="fas fa-address-book"></i>
+  </a>
+</div>
+
+</div>
+
+</div>
+
+
 <!-- BACK TO TOP -->
 <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
-
 
 <div class="floating-buttons">
   <a href="https://www.instagram.com/technomeet_pgmcoe?igsh=MTZycWkyejgwYWZ1NQ=="
@@ -568,11 +572,8 @@ document.getElementById("menuToggle")?.addEventListener("click", () => {
    data-tooltip="Contact Us">
   <i class="fas fa-phone"></i>
 </a>
-</div>
-</div>
+<script src = "script.js"></script>
 
 
-<script src="script.js"></script>
-</script>
 </body>
 </html>
