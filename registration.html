@@ -33,51 +33,58 @@ body{
   padding:40px;
 }
 
-/* 🔥 INCREASED WIDTH */
+/* 🔥 BIG CONTAINER */
 .container{
   width:100%;
-  max-width:850px;
+  max-width:900px;
+  min-height:95vh;
+  display:flex;
+  align-items:center;
 }
 
+/* 🔥 VERY TALL CARD */
 .card{
+  width:100%;
+  min-height:850px;
   background:rgba(11,18,32,0.9);
-  border-radius:20px;
-  padding:40px;               /* 🔥 MORE SPACE */
+  border-radius:22px;
+  padding:55px;
   border:1px solid rgba(200,229,40,0.75);
   box-shadow:0 20px 60px rgba(0,0,0,.6);
 }
 
-/* 🔥 BIGGER HEADINGS */
+/* TITLES */
 h1{
-  margin:0 0 14px;
-  font-size:36px;
+  margin:0 0 16px;
+  font-size:38px;
   text-align:center;
   color:var(--accent);
 }
 
 .sub{
   color:var(--muted);
-  margin-bottom:28px;
+  margin-bottom:32px;
   text-align:center;
   font-size:16px;
 }
 
+/* SECTIONS */
 .section{
-  margin-bottom:26px;
+  margin-bottom:34px;
 }
 
 .label{
-  margin-bottom:8px;
+  margin-bottom:10px;
   display:block;
   color:#c7d2fe;
   font-size:15px;
 }
 
-/* 🔥 BIGGER INPUTS */
+/* 🔥 BIG INPUTS */
 input, select{
   width:100%;
-  padding:16px 18px;
-  border-radius:14px;
+  padding:20px 22px;
+  border-radius:16px;
   background:#020617;
   border:1px solid var(--border);
   color:var(--text);
@@ -87,12 +94,12 @@ input, select{
 /* EVENTS */
 .events{
   display:grid;
-  gap:14px;
+  gap:16px;
 }
 
 .event{
-  padding:18px;
-  border-radius:16px;
+  padding:20px;
+  border-radius:18px;
   border:1px solid var(--border);
   cursor:pointer;
   font-size:16px;
@@ -103,16 +110,16 @@ input, select{
   box-shadow:0 0 0 2px var(--accent);
 }
 
-/* TYPE OPTIONS */
+/* OPTIONS */
 .options{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px;
+  gap:16px;
 }
 
 .box{
-  padding:18px;
-  border-radius:14px;
+  padding:20px;
+  border-radius:16px;
   border:1px solid var(--border);
   cursor:pointer;
   text-align:center;
@@ -134,8 +141,8 @@ input, select{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px;
-  border-radius:14px;
+  padding:20px;
+  border-radius:16px;
   background:#020617;
   border:1px solid var(--border);
 }
@@ -143,14 +150,14 @@ input, select{
 .price{
   color:var(--accent);
   font-weight:800;
-  font-size:24px;
+  font-size:26px;
 }
 
 /* 🔥 BIG BUTTONS */
 button{
   width:100%;
-  padding:18px;
-  border-radius:16px;
+  padding:22px;
+  border-radius:18px;
   border:none;
   background:linear-gradient(180deg,var(--accent),var(--accent-dark));
   color:#0e0f00;
@@ -162,21 +169,17 @@ button{
 .whatsapp{
   background:#d7c247;
   color:#0b0b0a;
-  margin-top:14px;
-}
-
-.note{
-  font-size:14px;
-  color:var(--muted);
+  margin-top:16px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
   .container{
-    max-width:100%;
+    min-height:auto;
   }
   .card{
-    padding:28px;
+    min-height:auto;
+    padding:32px;
   }
 }
 </style>
@@ -211,18 +214,18 @@ button{
 
 <!-- TEAM -->
 <div class="section" id="teamFields" style="display:none;">
-  <label class="label">Team Members</label>
+<label class="label">Team Members</label>
 
-  <select id="teamSize" style="display:none;">
-    <option value="2">2 Participants</option>
-    <option value="3">3 Participants</option>
-    <option value="4">4 Participants</option>
-  </select>
+<select id="teamSize" style="display:none;">
+  <option value="2">2 Participants</option>
+  <option value="3">3 Participants</option>
+  <option value="4">4 Participants</option>
+</select>
 
-  <input id="member1" placeholder="Participant 1 Name">
-  <input id="member2" placeholder="Participant 2 Name">
-  <input id="member3" placeholder="Participant 3 Name">
-  <input id="member4" placeholder="Participant 4 Name">
+<input id="member1" placeholder="Participant 1 Name">
+<input id="member2" placeholder="Participant 2 Name">
+<input id="member3" placeholder="Participant 3 Name">
+<input id="member4" placeholder="Participant 4 Name">
 </div>
 
 <!-- PHONE -->
@@ -260,7 +263,6 @@ const individual=document.getElementById('individual');
 const team=document.getElementById('team');
 const teamFields=document.getElementById('teamFields');
 const teamSize=document.getElementById('teamSize');
-const amount=document.getElementById('amount');
 const members=[member1,member2,member3,member4];
 
 events.forEach(e=>{
@@ -279,7 +281,7 @@ events.forEach(e=>{
     }else{
       team.classList.remove("disabled");
     }
-  }
+  };
 });
 
 individual.onclick=()=>{
@@ -307,11 +309,11 @@ teamSize.onchange=()=>{
 };
 
 function continueRegistration(){
-  alert("Registration submitted successfully!");
+  alert("Registration step completed!");
 }
 
 function sendWhatsApp(){
-  alert("WhatsApp fallback triggered!");
+  alert("WhatsApp fallback activated!");
 }
 </script>
 
