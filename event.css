@@ -1025,3 +1025,57 @@
     max-width: 320px;
   }
 }
+
+/* ======================
+   NAVBAR DROPDOWN
+====================== */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #111;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+  padding: 10px 16px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Hover effect */
+.dropdown-menu li a:hover {
+  background-color: #f5c400;
+  color: #000;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Caret spacing */
+.dropdown-toggle i {
+  margin-left: 6px;
+  font-size: 12px;
+}
