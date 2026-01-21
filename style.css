@@ -1744,13 +1744,23 @@ body{
 /* =========================
    SECTION FLOW FIX
 ========================= */
-
 section {
-  position: relative;
   width: 100%;
-  clear: both;
+  max-width: 1200px; /* for desktop */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* For columns inside section */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.col {
+  flex: 1 1 300px; /* responsive width, min 300px */
+}
 /* HERO FIX */
 .hero-slider {
   position: relative;
@@ -1787,4 +1797,11 @@ section {
 .countdown {
   position: relative;
   clear: both;
+}
+
+@media (max-width: 768px) {
+  h1, h2, h3 { font-size: 90%; }
+  p { font-size: 14px; }
+  button { width: 100%; }
+  img { max-width: 100%; height: auto; }
 }

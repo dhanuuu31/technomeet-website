@@ -35,18 +35,6 @@ if (slides.length > 0) {
 }
 
 // ======================
-// MOBILE MENU
-// ======================
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active"); // toggle nav for mobile
-  });
-}
-
-// ======================
 // COUNTDOWN TIMER (PREMIUM & SAFE)
 // ======================
 const eventDate = new Date("February 9, 2026 09:00:00 GMT+0530").getTime();
@@ -398,4 +386,11 @@ autoScroll();
 slider.addEventListener('wheel', (e)=>{
   e.preventDefault();
   slider.scrollLeft += e.deltaY;
+});
+
+const menuToggle = document.getElementById('mobile-menu');
+const nav = document.querySelector('.navbar ul');
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
 });
