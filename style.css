@@ -1805,3 +1805,21 @@ section {
   button { width: 100%; }
   img { max-width: 100%; height: auto; }
 }
+/* Slider container responsive */
+.slider-container, .swiper-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slider-container img, .swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+
+/* On mobile, stack slider content */
+@media (max-width: 768px) {
+  .slider-container, .swiper-container {
+    height: auto !important;
+  }
+}
