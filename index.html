@@ -104,26 +104,45 @@
 </style>
 
 </head>
+<script>
+document.getElementById("menuToggle")?.addEventListener("click", () => {
+  document.getElementById("navLinks")?.classList.toggle("show");
+});
+</script>
+
 <body>
 
 <!-- ======================
      HEADER / NAVBAR
 ====================== -->
 <header class="navbar">
+  <div class="menu-toggle" id="menuToggle">
+  <i class="fas fa-bars"></i>
+</div>
+
   <div class="nav-container">
 
     <div class="nav-left">
       <img src="technomeet_logo.png" class="logo" alt="Logo">
       <span class="site-title">TECHNOMEET 2K26</span>
     </div>
+<ul class="nav-links" id="navLinks">
 
-    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="event.html">Events</a></li>
+      <li class="dropdown">
+  <a href="event.html" class="dropdown-toggle">
+    Events <i class="fas fa-caret-down"></i>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a href="event.html">All Events</a></li>
+    <li><a href="codewar.html">CodeWar</a></li>
+    <li><a href="cybershield.html">Cyber Shield</a></li>
+    <li><a href="projectexpo.html">Project Expo</a></li>
+  </ul>
+</li>
       <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="coordinators.html">Coordinators</a></li>
-      <li><a href="#Sponsors">Sponsors</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="registration.html" class="Register">Register</a></li>
     </ul>
@@ -355,7 +374,7 @@
 
   <!-- View Gallery Button -->
   <div class="scroll-button-container">
-    <button class="scroll-button" onclick="window.location.href='gallery.html'">VIEW GALLERY</button>
+    <button class="scroll-button" onclick="window.location.href='registration.html'">REGISTER NOW</button>
   </div>
 </section>
 
@@ -482,17 +501,52 @@
     © 2026 <span>Technomeet</span> | Parvatibai Genba Moze College of Engineering, Pune
   </p>
 
-  <div class="footer-icons">
-    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-  </div>
+<div class="footer-icons">
+  <a href="https://www.instagram.com/technomeet_pgmcoe?igsh=MTZycWkyejgwYWZ1NQ=="
+     target="_blank"
+     class="icon-tooltip"
+     data-tooltip="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="mailto:technomeetpgmcoe@gmail.com"
+     class="icon-tooltip"
+     data-tooltip="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <a href="contact.html"
+     class="icon-tooltip"
+     data-tooltip="Contact Us">
+    <i class="fas fa-address-book"></i>
+  </a>
+</div>
+
+
+</div>
+
+</div>
+
 </footer>
 
+
 <div class="social-float">
-  <a href="https://www.instagram.com"><i class="bi bi-instagram"></i></a>
-  <a href="https://www.facebook.com"><i class="bi bi-linkedin"></i></a>
-  <a href="https://www.linkedin.com"><i class="bi bi-youtube"></i></a>
+  <a href="https://www.instagram.com/technomeet_pgmcoe?igsh=MTZycWkyejgwYWZ1NQ=="
+     target="_blank"
+     class="icon-tooltip"
+     data-tooltip="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="contact.html"
+     class="icon-tooltip"
+     data-tooltip="Contact Us">
+    <i class="fas fa-address-book"></i>
+  </a>
+</div>
+
+</div>
+
 </div>
 
 
@@ -500,12 +554,35 @@
 <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
 <div class="floating-buttons">
-  <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://www.instagram.com/technomeet_pgmcoe?igsh=MTZycWkyejgwYWZ1NQ=="
+     target="_blank"
+     class="icon-tooltip"
+     data-tooltip="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="mailto:technomeetpgmcoe@gmail.com"
+     class="icon-tooltip"
+     data-tooltip="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+<a href="contact.html"
+   class="icon-tooltip"
+   data-tooltip="Contact Us">
+  <i class="fas fa-phone"></i>
+</a>
+
+
 </div>
 
-<script src="script.js"></script>
+</div>
+
+</div>
+
+
+
+
 
 </body>
 </html>

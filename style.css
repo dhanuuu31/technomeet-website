@@ -47,24 +47,40 @@ body {
   color: #ffffff;
 }
 
-.nav-links {
-  color: #ffd200; /* yellow */
-  display: flex;
-  gap: 35px;
-  list-style: none;
+.nav-links{
+  display:flex;
+  gap:30px;
+  list-style:none;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #ffd200;
-  font-size: 15px;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+.menu-toggle{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+  color:#ffd200;
 }
 
-.nav-links a:hover {
-  color: #f6c600; /* GOLD */
+@media(max-width:900px){
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#000;
+    position:absolute;
+    top:70px;
+    right:0;
+    width:100%;
+    padding:20px;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
 }
+
 
 /* ======================
    HERO SLIDER
@@ -103,7 +119,7 @@ body {
   position: absolute;
   top: 32%;        /* 🔥 below logo */
   left: 8%;        /* 🔥 aligned like image */
-  max-width: 650px;
+  max-width: 90px;
   color: #fff;
   z-index: 2;
 
@@ -119,7 +135,8 @@ body {
 
 /* BIG HEADING */
 .slide-content h1 {
-  font-size: 60px;       /* 🔥 BIG TEXT */
+  font-size:clamp(32px, 6vw, 60px);
+      /* 🔥 BIG TEXT */
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: 1px;
@@ -166,8 +183,14 @@ body {
 /* ======================
    RESPONSIVE
 ====================== */
-.slide-content h1,
-.slide-content h6 {
+.slide-content h1{
+  font-size:clamp(32px, 6vw, 60px);
+}
+
+.slide-content h6{
+  font-size:clamp(14px, 3vw, 22px);
+
+
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
@@ -455,12 +478,17 @@ footer p {
   font-size: 16px;
 }
 
-.events-grid {
-  margin-top: 60px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+.events-grid{
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
 }
+
+@media(max-width:900px){
+  .events-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 
 .event-card {
   position: relative;
@@ -866,7 +894,7 @@ footer p {
 .timer {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
@@ -1258,10 +1286,15 @@ body{
 
 /* Image Card */
 .scroll-item{
-  flex:0 0 28%;
-  position: relative;
-  overflow:hidden;
+  flex:0 0 300px;
 }
+
+@media(max-width:600px){
+  .scroll-item{
+    flex:0 0 80%;
+  }
+}
+
 
 /* Square Image */
 .scroll-item img{
@@ -1324,5 +1357,117 @@ body{
 @media(max-width:900px){
   .scroll-item{
     flex:0 0 75%;
+  }
+}
+
+/* ======================
+   NAVBAR DROPDOWN
+====================== */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  color: #ffd200;
+}
+
+.nav-links li {
+  color: inherit;
+  position: relative;
+}
+.nav-links a {
+  color: #ffd200;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #ffd200;
+}
+
+.nav-links a i {
+  color: inherit;
+}
+
+
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #111;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+  padding: 10px 16px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Hover effect */
+.dropdown-menu li a:hover {
+  background-color: #f5c400;
+  color: #000;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Caret spacing */
+.dropdown-toggle i {
+  margin-left: 6px;
+  font-size: 12px;
+}
+.menu-toggle{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+  color:#ffd200;
+}
+
+/* Mobile menu */
+@media(max-width:900px){
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#000;
+    position:absolute;
+    top:70px;
+    right:0;
+    width:100%;
+    padding:20px;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  /* Hide heavy graphics on mobile */
+  .half-circle-wrapper{
+    display:none;
+  }
+
+  /* Events stack */
+  .events-grid{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:900px){
+  .half-circle-wrapper{
+    display:none;
   }
 }

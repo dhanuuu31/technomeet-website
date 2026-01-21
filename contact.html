@@ -217,23 +217,38 @@ button:hover {
 
 <body>
 
-<!-- HEADER -->
+<!-- ======================
+     HEADER / NAVBAR
+====================== -->
 <header class="navbar">
   <div class="nav-container">
+
     <div class="nav-left">
       <img src="technomeet_logo.png" class="logo" alt="Logo">
       <span class="site-title">TECHNOMEET 2K26</span>
     </div>
+
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="event.html">Events</a></li>
+      <li class="dropdown">
+  <a href="event.html" class="dropdown-toggle">
+    Events <i class="fas fa-caret-down"></i>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a href="event.html">All Events</a></li>
+    <li><a href="codewar.html">CodeWar</a></li>
+    <li><a href="cybershield.html">Cyber Shield</a></li>
+    <li><a href="projectexpo.html">Project Expo</a></li>
+  </ul>
+</li>
+
       <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="coordinators.html">Coordinators</a></li>
-      <li><a href="#Sponsors">Sponsors</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="registration.html" class="Register">Register</a></li>
     </ul>
+
   </div>
 </header>
 
@@ -292,7 +307,7 @@ button:hover {
 
         <div class="info-item">
           <strong>📞 Phone</strong><br>
-          +91 86050 05710 /
+          +91 9373206088 /
           +91 70206 00321
         </div>
       </div>
@@ -300,7 +315,6 @@ button:hover {
       <div class="card quick" style="margin-top:20px;">
         <h2>🎯 Quick Links</h2>
         <a href="registration.html">Register for Technomeet</a>
-        <a href="learn.html">Learn More About Event</a>
         <a href="event.html">View Events</a>
       </div>
     </div>
@@ -338,7 +352,7 @@ button:hover {
 <footer class="site-footer">
   <p>
     © 2026 <span class="highlight-yellow">Technomeet</span> |
-    Parvatibai Genba Moze College of Engineering, Pune
+    Parvatibai Genba Moze College of Engineering, Wagholi, Pune
   </p>
 
   <div class="footer-socials">

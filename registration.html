@@ -28,14 +28,17 @@ h1{margin:0 0 12px;font-size:30px;text-align:center;color:var(--accent)}
 .sub{color:var(--muted);margin-bottom:18px;text-align:center}
 .section{margin-bottom:18px}
 .label{margin-bottom:6px;display:block;color:#c7d2fe}
-input{width:100%;padding:12px 14px;border-radius:12px;background:#020617;border:1px solid var(--border);color:var(--text)}
+input, select{width:100%;padding:12px 14px;border-radius:12px;background:#020617;border:1px solid var(--border);color:var(--text)}
 .events{display:grid;gap:12px}
 .event{padding:14px;border-radius:14px;border:1px solid var(--border);cursor:pointer}
 .event.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 .options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .box{padding:14px;border-radius:12px;border:1px solid var(--border);cursor:pointer}
 .box.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
-.box.disabled{opacity:.4;pointer-events:none}
+.box.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 .total{display:flex;justify-content:space-between;padding:14px;border-radius:12px;background:#020617;border:1px solid var(--border)}
 .price{color:var(--accent);font-weight:800;font-size:22px}
 button{width:100%;padding:14px;border-radius:14px;border:none;background:linear-gradient(180deg,var(--accent),var(--accent-dark));color:#0e0f00;font-size:16px;font-weight:800;cursor:pointer}
@@ -43,18 +46,10 @@ button{width:100%;padding:14px;border-radius:14px;border:none;background:linear-
 .note{font-size:13px;color:var(--muted)}
 .qr{display:flex;justify-content:center}
 .qr img{width:200px;border-radius:12px}
-.badge{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:12px;
-  font-weight:800;
-  margin-top:6px;
-  color:#0e0f00;
-}
-.badge.pending{background-color:#ffc107}   /* yellow */
-.badge.verified{background-color:#28a745}  /* green */
-.badge.rejected{background-color:#dc3545}  /* red */
-
+.badge{display:inline-block;padding:6px 12px;border-radius:12px;font-weight:800;margin-top:6px;color:#0e0f00}
+.badge.pending{background:#ffc107}
+.badge.verified{background:#28a745}
+.badge.rejected{background:#dc3545}
 </style>
 </head>
 
@@ -87,11 +82,20 @@ button{width:100%;padding:14px;border-radius:14px;border:none;background:linear-
 <!-- TEAM SECTION -->
 <div class="section" id="teamFields" style="display:none;">
   <label class="label">Team Members</label>
+
+  <!-- Cyber Shield team size -->
+  <select id="teamSize" style="display:none;">
+    <option value="2">2 Participants</option>
+    <option value="3">3 Participants</option>
+    <option value="4">4 Participants</option>
+  </select>
+
   <input id="member1" placeholder="Participant 1 Name">
   <input id="member2" placeholder="Participant 2 Name">
   <input id="member3" placeholder="Participant 3 Name">
   <input id="member4" placeholder="Participant 4 Name">
 </div>
+
 
 <!-- PHONE -->
 <div class="section">
@@ -109,18 +113,19 @@ button{width:100%;padding:14px;border-radius:14px;border:none;background:linear-
 <div class="section">
 <div class="total">
   <span>Total Payable</span>
-  <span class="price" id="amount">₹100</span>
+  <span class="price" id="amount">₹100/ head</head></span>
 </div>
 </div>
 
-<!-- QR -->
+
+<!-- QR --
 <div class="section">
 <label class="label">Scan & Pay</label>
 <div class="qr"><img src="QR.jpeg" alt="UPI QR"></div>
 <div class="note">Pay exact amount using any UPI app</div>
 </div>
 
-<!-- SCREENSHOT NOTE -->
+<!-- SCREENSHOT NOTE --
 <div class="section">
 <label class="label">Payment Screenshot</label>
 <div class="note">
@@ -129,19 +134,19 @@ You will upload it on the next Google Form page.
 </div>
 </div>
 
-<!-- TXN -->
+<!-- TXN --
 <div class="section">
 <label class="label">UPI Transaction ID</label>
 <input id="txn" placeholder="Enter UPI Transaction ID">
 </div>
 
-<!-- PAYMENT STATUS (AUTO) -->
+<!-- PAYMENT STATUS (AUTO) --
 <div class="section">
 <label class="label">Payment Status</label>
 <div id="statusBadge" class="badge pending">Pending</div>
 <input type="hidden" id="paymentStatus" value="Pending">
 </div>
-
+-->
 <button onclick="continueRegistration()">Continue Registration</button>
 <button class="whatsapp" onclick="sendWhatsApp()">Submit via WhatsApp (Fallback)</button>
 
@@ -156,12 +161,12 @@ const events=document.querySelectorAll('.event');
 const individual=document.getElementById('individual');
 const team=document.getElementById('team');
 const teamFields=document.getElementById('teamFields');
+const teamSize=document.getElementById('teamSize');
 const amount=document.getElementById('amount');
-const statusBadge = document.getElementById("statusBadge");
-const paymentStatusInput = document.getElementById("paymentStatus");
 
-// Mock list of valid Txn IDs (replace with server check in real world)
-const validTxnIDs = ["68173593657","76217268735","87367561276834"]; 
+const members=[
+  member1,member2,member3,member4
+];
 
 events.forEach(e=>{
   e.onclick=()=>{
@@ -170,13 +175,19 @@ events.forEach(e=>{
     currentEvent = e.dataset.event;
 
     if(currentEvent === "Codewar"){
+      // FORCE individual only
       type = "individual";
+
       individual.classList.add("active");
       team.classList.remove("active");
+
+      team.classList.add("disabled");   // 🔒 lock team
       teamFields.style.display = "none";
-      team.classList.add("disabled");
-      amount.textContent = "₹100";
-    } else {
+      teamSize.style.display = "none";
+
+    } 
+    else {
+      // Enable team for other events
       team.classList.remove("disabled");
     }
   }
@@ -187,18 +198,39 @@ individual.onclick=()=>{
   individual.classList.add("active");
   team.classList.remove("active");
   teamFields.style.display="none";
-  amount.textContent = (currentEvent==="Codewar") ? "₹100" : (type==="team"? "₹400" : "₹100");
+  teamSize.style.display="none";
 };
 
-team.onclick=()=>{
-  if(team.classList.contains("disabled")) return;
-  type="team";
+team.onclick = () => {
+  // 🚫 BLOCK TEAM FOR CODEWAR NO MATTER WHAT
+  if (currentEvent === "Codewar") return;
+  if (team.classList.contains("disabled")) return;
+
+  type = "team";
+
   team.classList.add("active");
   individual.classList.remove("active");
-  teamFields.style.display="block";
-  amount.textContent = "₹400";
+
+  teamFields.style.display = "block";
+
+  if (currentEvent === "Cyber Shield") {
+    teamSize.style.display = "block";
+    updateMembers();
+  } else {
+    teamSize.style.display = "none";
+    members.forEach(m => m.style.display = "block");
+  }
 };
 
+teamSize.onchange=updateMembers;
+
+function updateMembers(){
+  let size=parseInt(teamSize.value);
+  members.forEach((m,i)=>{
+    m.style.display=i<size?"block":"none";
+    if(i>=size) m.value="";
+  });
+}
 // Update badge based on txn input
 document.getElementById("txn").addEventListener("input", function(){
   const txn = this.value.trim();
@@ -248,6 +280,8 @@ function continueRegistration(){
   + "&entry.567196608=" + encodeURIComponent(amount.textContent.replace("₹",""))
   + "&entry.1395617597=" + encodeURIComponent(txn)
   + "&entry.312322000=" + encodeURIComponent(paymentStatus);
+  + "&entry.965723147=" + encodeURIComponent(teamNameVal)
+
 
   window.location.href=formURL;
 }
