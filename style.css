@@ -1620,3 +1620,78 @@ body{
     display: none;
   }
 }
+/* ======================
+   RESPONSIVE FIXES
+====================== */
+
+/* NAVBAR MOBILE */
+@media (max-width: 900px) {
+  .menu-toggle { display: block; cursor: pointer; }
+  .nav-links { 
+    display: none; 
+    flex-direction: column; 
+    width: 100%; 
+    position: absolute; 
+    top: 60px; 
+    right: 0; 
+    background: #111; 
+    padding: 15px 0;
+    z-index: 1000;
+  }
+  .nav-links.show { display: flex; }
+  .nav-links li { margin: 10px 0; }
+  .dropdown-menu { position: static; display: none; }
+  .dropdown:hover .dropdown-menu { display: none; }
+}
+
+/* HERO SLIDER MOBILE */
+@media (max-width: 768px) {
+  .hero-slider { height: 50vh; }
+  .slide-content h1 { font-size: 5vw; }
+  .slide-content h6 { font-size: 3vw; }
+  .half-circle-wrapper { width: 80px; height: 80px; right: 10px; bottom: 10px; }
+  .circle.outer-circle { width: 80px; height: 80px; }
+  .circle.middle-circle { width: 60px; height: 60px; }
+  .circle.inner-circle { width: 40px; height: 40px; }
+}
+
+/* EVENTS CARDS MOBILE */
+@media (max-width: 768px) {
+  .events-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+  .event-card { height: 220px; }
+  .event-overlay h3 { font-size: 1.1rem; }
+  .event-overlay p { font-size: 0.9rem; }
+  .event-btn { font-size: 0.8rem; padding: 6px 10px; }
+}
+
+/* GALLERY SLIDER MOBILE */
+@media (max-width: 768px) {
+  .scroll-track { gap: 5px; }
+  .scroll-item { flex: 0 0 250px; } /* smaller images */
+  .scroll-item img { height: 180px; }
+}
+
+/* ABOUT SECTION MOBILE */
+@media (max-width: 768px) {
+  .about-experience { padding: 40px 10px; text-align: center; }
+  .about-stats { flex-direction: column; gap: 20px; }
+  .stat-box h3 { font-size: 1.5rem; }
+  .stat-box p { font-size: 0.9rem; }
+  .about-actions { flex-direction: column; gap: 15px; }
+}
+
+/* COUNTDOWN MOBILE */
+@media (max-width: 768px) {
+  .timer { flex-direction: column; gap: 15px; }
+  .time-box { width: 80%; margin: 0 auto; }
+}
+
+/* BACK TO TOP MOBILE */
+@media (max-width: 768px) {
+  #backToTop { right: 10px; bottom: 10px; padding: 10px; font-size: 16px; }
+}
+
+/* FLOATING BUTTONS MOBILE */
+@media (max-width: 768px) {
+  .floating-buttons { bottom: 10px; right: 10px; gap: 8px; }
+}
