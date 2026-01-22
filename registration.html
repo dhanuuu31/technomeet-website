@@ -3,183 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Event Registration</title>
+<title>Contact | Technomeet 2026</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="event.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root{
-  --bg:#020617;
-  --card:#0b1220;
-  --accent:#ffd700;
-  --accent-dark:#ffd700;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-  --border:#1f2937;
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --yellow: #ffd400;
+  --navy: #0d1b3d;
+  --muted: #b5b5b5;
 }
 
-*{
-  box-sizing:border-box;
-  font-family:Inter,system-ui,Arial;
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
 }
 
-body{
-  margin:0;
-  min-height:100vh;
-  background:url('slide5.webp') no-repeat center center fixed;
-  background-size:cover;
-  color:var(--text);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:40px;
+body {
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('evback.jpg') no-repeat center center;
+  background-size: cover; /* make the image cover entire page */
+  background-attachment: fixed; /* optional: makes it stay fixed when scrolling */
+  color: var(--white);
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
 }
 
-/* 🔥 BIG CONTAINER */
-.container{
-  width:100%;
-  max-width:900px;
-  min-height:95vh;
-  display:flex;
-  align-items:center;
+
+/* ===== HEADER SPACING ===== */
+header.navbar + .wrapper {
+  padding-top: 80px; /* space below header */
 }
 
-/* 🔥 VERY TALL CARD */
-.card{
-  width:100%;
-  min-height:850px;
-  background:rgba(11,18,32,0.9);
-  border-radius:22px;
-  padding:55px;
-  border:1px solid rgba(200,229,40,0.75);
-  box-shadow:0 20px 60px rgba(0,0,0,.6);
+/* ===== WRAPPER ===== */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* TITLES */
-h1{
-  margin:0 0 16px;
-  font-size:38px;
-  text-align:center;
-  color:var(--accent);
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(
+    135deg,
+    rgba(250, 204, 21, 0.08) 0%, 
+    #020617 100%
+  );
+  border-radius: 15px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
 }
 
-.sub{
-  color:var(--muted);
-  margin-bottom:32px;
-  text-align:center;
-  font-size:16px;
+
+.hero h1 {
+  color: var(--yellow);
+  font-size: 40px;
+  margin-bottom: 15px;
 }
 
-/* SECTIONS */
-.section{
-  margin-bottom:34px;
+.hero p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--white);
+  line-height: 1.6;
 }
 
-.label{
-  margin-bottom:10px;
-  display:block;
-  color:#c7d2fe;
-  font-size:15px;
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
 }
 
-/* 🔥 BIG INPUTS */
-input, select{
-  width:100%;
-  padding:20px 22px;
-  border-radius:16px;
-  background:#020617;
-  border:1px solid var(--border);
-  color:var(--text);
-  font-size:16px;
+/* ===== CARD ===== */
+.card {
+  background-color: #020617;
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid var(--yellow);
 }
 
-/* EVENTS */
-.events{
-  display:grid;
-  gap:16px;
+/* ===== HEADINGS ===== */
+.card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--yellow);
 }
 
-.event{
-  padding:20px;
-  border-radius:18px;
-  border:1px solid var(--border);
-  cursor:pointer;
-  font-size:16px;
+.card h2::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: var(--yellow);
 }
 
-.event.active{
-  border-color:var(--accent);
-  box-shadow:0 0 0 2px var(--accent);
+/* ===== FORM ===== */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--white);
 }
 
-/* OPTIONS */
-.options{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--white);
+  background-color: var(--black);
+  color: var(--white);
+  margin-bottom: 18px;
 }
 
-.box{
-  padding:20px;
-  border-radius:16px;
-  border:1px solid var(--border);
-  cursor:pointer;
-  text-align:center;
-  font-size:16px;
+input::placeholder, textarea::placeholder {
+  color: var(--muted);
 }
 
-.box.active{
-  border-color:var(--accent);
-  box-shadow:0 0 0 2px var(--accent);
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--yellow);
 }
 
-.box.disabled{
-  opacity:0.4;
-  cursor:not-allowed;
+/* ===== BUTTON ===== */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  background-color: var(--yellow);
+  border: none;
+  color: var(--black);
+  font-size: 16px;
+  cursor: pointer;
 }
 
-/* TOTAL */
-.total{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px;
-  border-radius:16px;
-  background:#020617;
-  border:1px solid var(--border);
+button:hover {
+  background-color: #e6c200;
 }
 
-.price{
-  color:var(--accent);
-  font-weight:800;
-  font-size:26px;
+/* ===== INFO BOX ===== */
+.info-item {
+  background-color: #020617;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-left: 4px solid var(--yellow);
+  color: var(--white);
 }
 
-/* 🔥 BIG BUTTONS */
-button{
-  width:100%;
-  padding:22px;
-  border-radius:18px;
-  border:none;
-  background:linear-gradient(180deg,var(--accent),var(--accent-dark));
-  color:#0e0f00;
-  font-size:18px;
-  font-weight:800;
-  cursor:pointer;
+/* ===== QUICK LINKS BUTTONS ===== */
+.quick a {
+  display: block;
+  text-decoration: none;
+  color: red;                  /* text red */
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #ffffff;   /* white background */
+  margin-bottom: 10px;
+  text-align: center;
+  border: 1px solid red;      /* optional: border matches text */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.whatsapp{
-  background:#d7c247;
-  color:#0b0b0a;
-  margin-top:16px;
+.quick a:hover {
+  background-color: var(--yellow); /* yellow background on hover */
+  color: black;                     /* text black on hover */
+  border-color: black;              /* optional: border changes too */
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .container{
-    min-height:auto;
-  }
-  .card{
-    min-height:auto;
-    padding:32px;
+
+/* ===== FAQ ===== */
+.faq {
+  margin-top: 60px;
+}
+
+.faq h2 {
+  margin-bottom: 30px;
+  color: var(--yellow);
+}
+
+.faq-item {
+  background-color: #020617;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--yellow);
+}
+
+.faq-item h4 {
+  margin-bottom: 8px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -187,135 +217,168 @@ button{
 
 <body>
 
-<div class="container">
-<div class="card">
+<!-- ======================
+     HEADER / NAVBAR
+====================== -->
+<header class="navbar">
+  <div class="nav-container">
 
-<h1>Registration</h1>
-<div class="sub">CodeWar • Cyber Shield • Project Expo</div>
+    <div class="nav-left">
+      <img src="technomeet_logo.png" class="logo" alt="Logo">
+      <span class="site-title">TECHNOMEET 2K26</span>
+    </div>
 
-<!-- EVENT -->
-<div class="section">
-<label class="label">Select Event</label>
-<div class="events">
-  <div class="event active" data-event="Codewar">💻 CodeWar</div>
-  <div class="event" data-event="Cyber Shield">🛡 Cyber Shield</div>
-  <div class="event" data-event="Model Exhibition">🤖 Project Expo</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+  <a href="event.html" class="dropdown-toggle">
+    Events <i class="fas fa-caret-down"></i>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a href="event.html">All Events</a></li>
+    <li><a href="codewar.html">CodeWar</a></li>
+    <li><a href="cybershield.html">Cyber Shield</a></li>
+    <li><a href="projectexpo.html">Project Expo</a></li>
+  </ul>
+</li>
+
+      <li><a href="about.html">About</a></li>
+      <li><a href="coordinators.html">Coordinators</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="registration.html" class="Register">Register</a></li>
+    </ul>
+
+  </div>
+</header>
+
+<div class="wrapper">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Get in Touch</h1>
+    <p>
+      Have questions about Technomeet? Need assistance with registration?
+      Want to become a sponsor? Fill out the form below and send us a message. Your email client will open automatically.
+    </p>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- CONTACT FORM -->
+    <div class="card">
+      <h2>📨 Send us a Message</h2>
+
+      <form action="mailto:technomeet@gmail.com" method="GET" enctype="text/plain">
+        <label>Full Name *</label>
+        <input type="text" name="Name" placeholder="Enter your full name" required>
+
+        <label>Email Address *</label>
+        <input type="email" name="Email" placeholder="your.email@example.com" required>
+
+        <label>Phone Number</label>
+        <input type="text" name="Phone" placeholder="+91 1234567890">
+
+        <label>Subject *</label>
+        <input type="text" name="Subject" placeholder="Your Subject" required>
+
+        <label>Message *</label>
+        <textarea name="Message" rows="5" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit">📨 Send Message</button>
+      </form>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div>
+      <div class="card">
+        <h2>📍 Contact Information</h2>
+
+        <div class="info-item">
+          <strong>🏢 Address</strong><br>
+          Parvatibai Genba Sopanrao Moze College of Engineering, Wagholi, Pune
+        </div>
+
+        <div class="info-item">
+          <strong>📧 Email</strong><br>
+          technomeetpgmcoe@gmail.com
+        </div>
+
+        <div class="info-item">
+          <strong>📞 Phone</strong><br>
+          +91 9373206088 /
+          +91 70206 00321
+        </div>
+      </div>
+
+      <div class="card quick" style="margin-top:20px;">
+        <h2>🎯 Quick Links</h2>
+        <a href="registration.html">Register for Technomeet</a>
+        <a href="event.html">View Events</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h4>How do I register for Technomeet?</h4>
+      <p>You can register through our registration page.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>What is the registration deadline?</h4>
+      <p>Registration closes soon. Early registration is recommended.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Is there a registration fee?</h4>
+      <p>Please contact us for registration fee details.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Can I participate remotely?</h4>
+      <p>Preliminary rounds may be online. Final rounds are on campus.</p>
+    </div>
+  </div>
+
 </div>
+
+<!-- ======================
+     FOOTER
+====================== -->
+<footer class="site-footer">
+  <p>
+    © 2026 <span>Technomeet</span> | Parvatibai Genba Moze College of Engineering, Pune
+  </p>
+
+<div class="footer-icons">
+  <a href="https://www.instagram.com/technomeet_pgmcoe?igsh=MTZycWkyejgwYWZ1NQ=="
+     target="_blank"
+     class="icon-tooltip"
+     data-tooltip="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="mailto:technomeetpgmcoe@gmail.com"
+     class="icon-tooltip"
+     data-tooltip="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <a href="contact.html"
+     class="icon-tooltip"
+     data-tooltip="Contact Us">
+    <i class="fas fa-address-book"></i>
+  </a>
 </div>
 
-<!-- TYPE -->
-<div class="section">
-<label class="label">Registration Type</label>
-<div class="options">
-  <div class="box active" id="individual">Individual</div>
-  <div class="box" id="team">Team</div>
-</div>
-</div>
 
-<!-- TEAM -->
-<div class="section" id="teamFields" style="display:none;">
-<label class="label">Team Members</label>
-
-<select id="teamSize" style="display:none;">
-  <option value="2">2 Participants</option>
-  <option value="3">3 Participants</option>
-  <option value="4">4 Participants</option>
-</select>
-
-<input id="member1" placeholder="Participant 1 Name">
-<input id="member2" placeholder="Participant 2 Name">
-<input id="member3" placeholder="Participant 3 Name">
-<input id="member4" placeholder="Participant 4 Name">
-</div>
-
-<!-- PHONE -->
-<div class="section">
-<label class="label">Phone Number</label>
-<input type="tel" id="phone" placeholder="Enter phone number">
-</div>
-
-<!-- EMAIL -->
-<div class="section">
-<label class="label">Email Address</label>
-<input type="email" id="email" placeholder="Enter email address">
-</div>
-
-<!-- TOTAL -->
-<div class="section">
-<div class="total">
-  <span>Total Payable</span>
-  <span class="price" id="amount">₹100 / head</span>
-</div>
-</div>
-
-<button onclick="continueRegistration()">Continue Registration</button>
-<button class="whatsapp" onclick="sendWhatsApp()">Submit via WhatsApp</button>
-
-</div>
-</div>
-
-<script>
-let currentEvent="Codewar";
-let type="individual";
-
-const events=document.querySelectorAll('.event');
-const individual=document.getElementById('individual');
-const team=document.getElementById('team');
-const teamFields=document.getElementById('teamFields');
-const teamSize=document.getElementById('teamSize');
-const members=[member1,member2,member3,member4];
-
-events.forEach(e=>{
-  e.onclick=()=>{
-    events.forEach(x=>x.classList.remove('active'));
-    e.classList.add('active');
-    currentEvent=e.dataset.event;
-
-    if(currentEvent==="Codewar"){
-      type="individual";
-      individual.classList.add("active");
-      team.classList.remove("active");
-      team.classList.add("disabled");
-      teamFields.style.display="none";
-      teamSize.style.display="none";
-    }else{
-      team.classList.remove("disabled");
-    }
-  };
-});
-
-individual.onclick=()=>{
-  type="individual";
-  individual.classList.add("active");
-  team.classList.remove("active");
-  teamFields.style.display="none";
-};
-
-team.onclick=()=>{
-  if(currentEvent==="Codewar") return;
-  type="team";
-  team.classList.add("active");
-  individual.classList.remove("active");
-  teamFields.style.display="block";
-  teamSize.style.display=currentEvent==="Cyber Shield"?"block":"none";
-};
-
-teamSize.onchange=()=>{
-  let size=parseInt(teamSize.value);
-  members.forEach((m,i)=>{
-    m.style.display=i<size?"block":"none";
-    if(i>=size) m.value="";
-  });
-};
-
-function continueRegistration(){
-  alert("Registration step completed!");
-}
-
-function sendWhatsApp(){
-  alert("WhatsApp fallback activated!");
-}
-</script>
+</footer>
 
 </body>
 </html>
