@@ -118,14 +118,14 @@ button{width:100%;padding:14px;border-radius:14px;border:none;background:linear-
 </div>
 
 
-
+<!-- SCREENSHOT NOTE --
 <div class="section">
 <label class="label">Scan & Pay</label>
 <div class="qr"><img src="QR.jpeg" alt="UPI QR"></div>
 <div class="note">Pay exact amount using any UPI app</div>
 </div>
 
-<!-- SCREENSHOT NOTE -->
+<!-- SCREENSHOT NOTE --
 <div class="section">
 <label class="label">Payment Screenshot</label>
 <div class="note">
@@ -134,18 +134,19 @@ You will upload it on the next Google Form page.
 </div>
 </div>
 
-<!-- TXN -->
+<!-- TXN --
 <div class="section">
 <label class="label">UPI Transaction ID</label>
 <input id="txn" placeholder="Enter UPI Transaction ID">
 </div>
 
-<!-- PAYMENT STATUS (AUTO) -->
+<!-- PAYMENT STATUS (AUTO) --
 <div class="section">
 <label class="label">Payment Status</label>
 <div id="statusBadge" class="badge pending">Pending</div>
 <input type="hidden" id="paymentStatus" value="Pending">
 </div>
+-->
 
 <button onclick="continueRegistration()">Continue Registration</button>
 <button class="whatsapp" onclick="sendWhatsApp()">Submit via WhatsApp (Fallback)</button>
@@ -250,20 +251,20 @@ document.getElementById("txn").addEventListener("input", function(){
 });
 
 function continueRegistration(){
-  const txn=document.getElementById("txn").value.trim();
+
   const phoneVal=document.getElementById("phone").value.trim();
   const emailVal=document.getElementById("email").value.trim();
   const m1=document.getElementById("member1").value.trim();
   const m2=document.getElementById("member2").value.trim();
   const m3=document.getElementById("member3").value.trim();
   const m4=document.getElementById("member4").value.trim();
-  const paymentStatus = paymentStatusInput.value;
 
-  if(!txn){ alert("Please enter UPI Transaction ID"); return; }
   if(!phoneVal){ alert("Please enter phone number"); return; }
   if(!emailVal){ alert("Please enter email"); return; }
+
   if(type==="team" && (!m1||!m2||!m3||!m4)){ 
-    alert("Please enter all team member names"); return; 
+    alert("Please enter all team member names"); 
+    return; 
   }
 
   const formURL =
@@ -275,13 +276,7 @@ function continueRegistration(){
   + "&entry.694350229=" + encodeURIComponent(m3)
   + "&entry.559508603=" + encodeURIComponent(m4)
   + "&entry.2103995094=" + encodeURIComponent(phoneVal)
-  + "&entry.1077259244=" + encodeURIComponent(emailVal)
-  + "&entry.1122391706=" + encodeURIComponent(type==="team"?4:1)
-  + "&entry.567196608=" + encodeURIComponent(amount.textContent.replace("₹",""))
-  + "&entry.1395617597=" + encodeURIComponent(txn)
-  + "&entry.312322000=" + encodeURIComponent(paymentStatus);
-  + "&entry.965723147=" + encodeURIComponent(teamNameVal)
-
+  + "&entry.1077259244=" + encodeURIComponent(emailVal);
 
   window.location.href=formURL;
 }
