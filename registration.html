@@ -3,382 +3,319 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Technomeet 2026</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="event.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Event Registration</title>
 
 <style>
-:root {
-  --black: #000000;
-  --white: #ffffff;
-  --yellow: #ffd400;
-  --navy: #0d1b3d;
-  --muted: #b5b5b5;
+:root{
+  --bg:#020617;--card:#0b1220;--accent:#ffd700;--accent-dark:#ffd700;
+  --text:#e5e7eb;--muted:#9ca3af;--border:#1f2937
 }
-
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, sans-serif;
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial}
+body{
+  margin:0;min-height:100vh;
+  background: url('slide5.webp') no-repeat center center fixed;
+  background-size: cover;
+  color:var(--text);display:flex;justify-content:center;align-items:center;padding:32px
 }
-
-body {
-  background: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.6), 
-      rgba(0, 0, 0, 0.6)
-    ),
-    url('evback.jpg') no-repeat center center;
-  background-size: cover; /* make the image cover entire page */
-  background-attachment: fixed; /* optional: makes it stay fixed when scrolling */
-  color: var(--white);
-  min-height: 100vh;
-  font-family: "Segoe UI", system-ui, sans-serif;
+.container{width:100%;max-width:600px}
+.card{
+  background: rgba(11,18,32,0.85);
+  border-radius:18px;padding:24px;
+  border:1px solid rgba(200, 229, 40, 0.741);
+  box-shadow:0 20px 60px rgba(0,0,0,.6)
 }
-
-
-/* ===== HEADER SPACING ===== */
-header.navbar + .wrapper {
-  padding-top: 80px; /* space below header */
+h1{margin:0 0 12px;font-size:30px;text-align:center;color:var(--accent)}
+.sub{color:var(--muted);margin-bottom:18px;text-align:center}
+.section{margin-bottom:18px}
+.label{margin-bottom:6px;display:block;color:#c7d2fe}
+input, select{width:100%;padding:12px 14px;border-radius:12px;background:#020617;border:1px solid var(--border);color:var(--text)}
+.events{display:grid;gap:12px}
+.event{padding:14px;border-radius:14px;border:1px solid var(--border);cursor:pointer}
+.event.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.box{padding:14px;border-radius:12px;border:1px solid var(--border);cursor:pointer}
+.box.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.box.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
-
-/* ===== WRAPPER ===== */
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-  background: linear-gradient(
-    135deg,
-    rgba(250, 204, 21, 0.08) 0%, 
-    #020617 100%
-  );
-  border-radius: 15px;
-  padding: 40px 20px;
-  text-align: center;
-  margin-bottom: 50px;
-  margin-top: 20px;
-}
-
-
-.hero h1 {
-  color: var(--yellow);
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  max-width: 800px;
-  margin: 0 auto;
-  color: var(--white);
-  line-height: 1.6;
-}
-
-/* ===== GRID ===== */
-.grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 30px;
-}
-
-/* ===== CARD ===== */
-.card {
-  background-color: #020617;
-  border-radius: 15px;
-  padding: 30px;
-  border: 1px solid var(--yellow);
-}
-
-/* ===== HEADINGS ===== */
-.card h2 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  color: var(--yellow);
-}
-
-.card h2::after {
-  content: "";
-  flex: 1;
-  height: 2px;
-  background-color: var(--yellow);
-}
-
-/* ===== FORM ===== */
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: var(--white);
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid var(--white);
-  background-color: var(--black);
-  color: var(--white);
-  margin-bottom: 18px;
-}
-
-input::placeholder, textarea::placeholder {
-  color: var(--muted);
-}
-
-input:focus, textarea:focus, select:focus {
-  outline: 2px solid var(--yellow);
-}
-
-/* ===== BUTTON ===== */
-button {
-  width: 100%;
-  padding: 14px;
-  border-radius: 8px;
-  background-color: var(--yellow);
-  border: none;
-  color: var(--black);
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #e6c200;
-}
-
-/* ===== INFO BOX ===== */
-.info-item {
-  background-color: #020617;
-  border-radius: 8px;
-  padding: 18px;
-  margin-bottom: 15px;
-  border-left: 4px solid var(--yellow);
-  color: var(--white);
-}
-
-/* ===== QUICK LINKS BUTTONS ===== */
-.quick a {
-  display: block;
-  text-decoration: none;
-  color: red;                  /* text red */
-  padding: 12px;
-  border-radius: 8px;
-  background-color: #ffffff;   /* white background */
-  margin-bottom: 10px;
-  text-align: center;
-  border: 1px solid red;      /* optional: border matches text */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.quick a:hover {
-  background-color: var(--yellow); /* yellow background on hover */
-  color: black;                     /* text black on hover */
-  border-color: black;              /* optional: border changes too */
-}
-
-
-/* ===== FAQ ===== */
-.faq {
-  margin-top: 60px;
-}
-
-.faq h2 {
-  margin-bottom: 30px;
-  color: var(--yellow);
-}
-
-.faq-item {
-  background-color: #020617;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 4px solid var(--yellow);
-}
-
-.faq-item h4 {
-  margin-bottom: 8px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
+.total{display:flex;justify-content:space-between;padding:14px;border-radius:12px;background:#020617;border:1px solid var(--border)}
+.price{color:var(--accent);font-weight:800;font-size:22px}
+button{width:100%;padding:14px;border-radius:14px;border:none;background:linear-gradient(180deg,var(--accent),var(--accent-dark));color:#0e0f00;font-size:16px;font-weight:800;cursor:pointer}
+.whatsapp{background:#d7c247;color:#0b0b0a;margin-top:12px}
+.note{font-size:13px;color:var(--muted)}
+.qr{display:flex;justify-content:center}
+.qr img{width:200px;border-radius:12px}
+.badge{display:inline-block;padding:6px 12px;border-radius:12px;font-weight:800;margin-top:6px;color:#0e0f00}
+.badge.pending{background:#ffc107}
+.badge.verified{background:#28a745}
+.badge.rejected{background:#dc3545}
 </style>
 </head>
 
 <body>
+<div class="container">
+<div class="card">
 
-<!-- ======================
-     HEADER / NAVBAR
-====================== -->
-<header class="navbar">
-  <div class="nav-container">
+<h1>Registration</h1>
+<div class="sub">CodeWar • Cyber Shield • Model Exhibition</div>
 
-    <div class="nav-left">
-      <img src="technomeet_logo.png" class="logo" alt="Logo">
-      <span class="site-title">TECHNOMEET 2K26</span>
-    </div>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-  <a href="event.html" class="dropdown-toggle">
-    Events <i class="fas fa-caret-down"></i>
-  </a>
-
-  <ul class="dropdown-menu">
-    <li><a href="event.html">All Events</a></li>
-    <li><a href="codewar.html">CodeWar</a></li>
-    <li><a href="cybershield.html">Cyber Shield</a></li>
-    <li><a href="projectexpo.html">Project Expo</a></li>
-  </ul>
-</li>
-
-      <li><a href="about.html">About</a></li>
-      <li><a href="coordinators.html">Coordinators</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="registration.html" class="Register">Register</a></li>
-    </ul>
-
-  </div>
-</header>
-
-<div class="wrapper">
-
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Get in Touch</h1>
-    <p>
-      Have questions about Technomeet? Need assistance with registration?
-      Want to become a sponsor? Fill out the form below and send us a message. Your email client will open automatically.
-    </p>
-  </div>
-
-  <!-- GRID -->
-  <div class="grid">
-
-    <!-- CONTACT FORM -->
-    <div class="card">
-      <h2>📨 Send us a Message</h2>
-
-      <form action="mailto:technomeet@gmail.com" method="GET" enctype="text/plain">
-        <label>Full Name *</label>
-        <input type="text" name="Name" placeholder="Enter your full name" required>
-
-        <label>Email Address *</label>
-        <input type="email" name="Email" placeholder="your.email@example.com" required>
-
-        <label>Phone Number</label>
-        <input type="text" name="Phone" placeholder="+91 1234567890">
-
-        <label>Subject *</label>
-        <input type="text" name="Subject" placeholder="Your Subject" required>
-
-        <label>Message *</label>
-        <textarea name="Message" rows="5" placeholder="Type your message here..." required></textarea>
-
-        <button type="submit">📨 Send Message</button>
-      </form>
-    </div>
-
-    <!-- CONTACT INFO -->
-    <div>
-      <div class="card">
-        <h2>📍 Contact Information</h2>
-
-        <div class="info-item">
-          <strong>🏢 Address</strong><br>
-          Parvatibai Genba Sopanrao Moze College of Engineering, Wagholi, Pune
-        </div>
-
-        <div class="info-item">
-          <strong>📧 Email</strong><br>
-          technomeetpgmcoe@gmail.com
-        </div>
-
-        <div class="info-item">
-          <strong>📞 Phone</strong><br>
-          +91 9373206088 /
-          +91 70206 00321
-        </div>
-      </div>
-
-      <div class="card quick" style="margin-top:20px;">
-        <h2>🎯 Quick Links</h2>
-        <a href="registration.html">Register for Technomeet</a>
-        <a href="event.html">View Events</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- FAQ -->
-  <div class="faq">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <h4>How do I register for Technomeet?</h4>
-      <p>You can register through our registration page.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>What is the registration deadline?</h4>
-      <p>Registration closes soon. Early registration is recommended.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>Is there a registration fee?</h4>
-      <p>Please contact us for registration fee details.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>Can I participate remotely?</h4>
-      <p>Preliminary rounds may be online. Final rounds are on campus.</p>
-    </div>
-  </div>
-
+<!-- EVENT -->
+<div class="section">
+<label class="label">Select Event</label>
+<div class="events">
+  <div class="event active" data-event="Codewar">💻 CodeWar</div>
+  <div class="event" data-event="Cyber Shield">🛡 Cyber Shield</div>
+  <div class="event" data-event="Model Exhibition">🤖 Project Expo</div>
+</div>
 </div>
 
-<!-- ======================
-     FOOTER
-====================== -->
-<footer class="site-footer">
-  <p>
-    © 2026 <span>Technomeet</span> | Parvatibai Genba Moze College of Engineering, Pune
-  </p>
+<!-- TYPE -->
+<div class="section">
+<label class="label">Registration Type</label>
+<div class="options">
+  <div class="box active" id="individual">Individual</div>
+  <div class="box" id="team">Team</div>
+</div>
+</div>
 
-<div class="footer-icons">
-  <a href="https://www.instagram.com/technomeet_pgmcoe?igsh=MTZycWkyejgwYWZ1NQ=="
-     target="_blank"
-     class="icon-tooltip"
-     data-tooltip="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
+<!-- TEAM SECTION -->
+<div class="section" id="teamFields" style="display:none;">
+  <label class="label">Team Members</label>
 
-  <a href="mailto:technomeetpgmcoe@gmail.com"
-     class="icon-tooltip"
-     data-tooltip="Email">
-    <i class="fas fa-envelope"></i>
-  </a>
+  <!-- Cyber Shield team size -->
+  <select id="teamSize" style="display:none;">
+    <option value="2">2 Participants</option>
+    <option value="3">3 Participants</option>
+    <option value="4">4 Participants</option>
+  </select>
 
-  <a href="contact.html"
-     class="icon-tooltip"
-     data-tooltip="Contact Us">
-    <i class="fas fa-address-book"></i>
-  </a>
+  <input id="member1" placeholder="Participant 1 Name">
+  <input id="member2" placeholder="Participant 2 Name">
+  <input id="member3" placeholder="Participant 3 Name">
+  <input id="member4" placeholder="Participant 4 Name">
 </div>
 
 
-</footer>
+<!-- PHONE -->
+<div class="section">
+<label class="label">Phone Number</label>
+<input type="tel" id="phone" placeholder="Enter phone number">
+</div>
+
+<!-- EMAIL -->
+<div class="section">
+<label class="label">Email Address</label>
+<input type="email" id="email" placeholder="Enter email address">
+</div>
+
+<!-- TOTAL -->
+<div class="section">
+<div class="total">
+  <span>Total Payable</span>
+  <span class="price" id="amount">₹100/ head</head></span>
+</div>
+</div>
+
+
+<!-- QR --
+<div class="section">
+<label class="label">Scan & Pay</label>
+<div class="qr"><img src="QR.jpeg" alt="UPI QR"></div>
+<div class="note">Pay exact amount using any UPI app</div>
+</div>
+
+<!-- SCREENSHOT NOTE --
+<div class="section">
+<label class="label">Payment Screenshot</label>
+<div class="note">
+After payment, take a screenshot of the successful transaction.
+You will upload it on the next Google Form page.
+</div>
+</div>
+
+<!-- TXN --
+<div class="section">
+<label class="label">UPI Transaction ID</label>
+<input id="txn" placeholder="Enter UPI Transaction ID">
+</div>
+
+<!-- PAYMENT STATUS (AUTO) --
+<div class="section">
+<label class="label">Payment Status</label>
+<div id="statusBadge" class="badge pending">Pending</div>
+<input type="hidden" id="paymentStatus" value="Pending">
+</div>
+-->
+<button onclick="continueRegistration()">Continue Registration</button>
+<button class="whatsapp" onclick="sendWhatsApp()">Submit via WhatsApp (Fallback)</button>
+
+</div>
+</div>
+
+<script>
+let currentEvent="Codewar";
+let type="individual";
+
+const events=document.querySelectorAll('.event');
+const individual=document.getElementById('individual');
+const team=document.getElementById('team');
+const teamFields=document.getElementById('teamFields');
+const teamSize=document.getElementById('teamSize');
+const amount=document.getElementById('amount');
+
+const members=[
+  member1,member2,member3,member4
+];
+
+events.forEach(e=>{
+  e.onclick=()=>{
+    events.forEach(x=>x.classList.remove('active'));
+    e.classList.add('active');
+    currentEvent = e.dataset.event;
+
+    if(currentEvent === "Codewar"){
+      // FORCE individual only
+      type = "individual";
+
+      individual.classList.add("active");
+      team.classList.remove("active");
+
+      team.classList.add("disabled");   // 🔒 lock team
+      teamFields.style.display = "none";
+      teamSize.style.display = "none";
+
+    } 
+    else {
+      // Enable team for other events
+      team.classList.remove("disabled");
+    }
+  }
+});
+
+individual.onclick=()=>{
+  type="individual";
+  individual.classList.add("active");
+  team.classList.remove("active");
+  teamFields.style.display="none";
+  teamSize.style.display="none";
+};
+
+team.onclick = () => {
+  // 🚫 BLOCK TEAM FOR CODEWAR NO MATTER WHAT
+  if (currentEvent === "Codewar") return;
+  if (team.classList.contains("disabled")) return;
+
+  type = "team";
+
+  team.classList.add("active");
+  individual.classList.remove("active");
+
+  teamFields.style.display = "block";
+
+  if (currentEvent === "Cyber Shield") {
+    teamSize.style.display = "block";
+    updateMembers();
+  } else {
+    teamSize.style.display = "none";
+    members.forEach(m => m.style.display = "block");
+  }
+};
+
+teamSize.onchange=updateMembers;
+
+function updateMembers(){
+  let size=parseInt(teamSize.value);
+  members.forEach((m,i)=>{
+    m.style.display=i<size?"block":"none";
+    if(i>=size) m.value="";
+  });
+}
+// Update badge based on txn input
+document.getElementById("txn").addEventListener("input", function(){
+  const txn = this.value.trim();
+  if(validTxnIDs.includes(txn)){
+    statusBadge.textContent = "Verified";
+    statusBadge.className = "badge verified";
+    paymentStatusInput.value = "Verified";
+  } else if(txn.length > 0){
+    statusBadge.textContent = "Rejected";
+    statusBadge.className = "badge rejected";
+    paymentStatusInput.value = "Rejected";
+  } else {
+    statusBadge.textContent = "Pending";
+    statusBadge.className = "badge pending";
+    paymentStatusInput.value = "Pending";
+  }
+});
+
+function continueRegistration(){
+  const txn=document.getElementById("txn").value.trim();
+  const phoneVal=document.getElementById("phone").value.trim();
+  const emailVal=document.getElementById("email").value.trim();
+  const m1=document.getElementById("member1").value.trim();
+  const m2=document.getElementById("member2").value.trim();
+  const m3=document.getElementById("member3").value.trim();
+  const m4=document.getElementById("member4").value.trim();
+  const paymentStatus = paymentStatusInput.value;
+
+  if(!txn){ alert("Please enter UPI Transaction ID"); return; }
+  if(!phoneVal){ alert("Please enter phone number"); return; }
+  if(!emailVal){ alert("Please enter email"); return; }
+  if(type==="team" && (!m1||!m2||!m3||!m4)){ 
+    alert("Please enter all team member names"); return; 
+  }
+
+  const formURL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScbg_fCpTsEybqZzMQI_wDbuHYZWrBNxEEnErGhT9DhcrOATw/viewform?usp=pp_url"
+  + "&entry.617927822=" + encodeURIComponent(currentEvent)
+  + "&entry.1709362589=" + encodeURIComponent(type)
+  + "&entry.175607427=" + encodeURIComponent(m1)
+  + "&entry.1065588422=" + encodeURIComponent(m2)
+  + "&entry.694350229=" + encodeURIComponent(m3)
+  + "&entry.559508603=" + encodeURIComponent(m4)
+  + "&entry.2103995094=" + encodeURIComponent(phoneVal)
+  + "&entry.1077259244=" + encodeURIComponent(emailVal)
+  + "&entry.1122391706=" + encodeURIComponent(type==="team"?4:1)
+  + "&entry.567196608=" + encodeURIComponent(amount.textContent.replace("₹",""))
+  + "&entry.1395617597=" + encodeURIComponent(txn)
+  + "&entry.312322000=" + encodeURIComponent(paymentStatus);
+  + "&entry.965723147=" + encodeURIComponent(teamNameVal)
+
+
+  window.location.href=formURL;
+}
+
+function sendWhatsApp(){
+  const txn=document.getElementById("txn").value;
+  const phoneVal=document.getElementById("phone").value;
+  const emailVal=document.getElementById("email").value;
+  const m1=document.getElementById("member1").value;
+  const m2=document.getElementById("member2").value;
+  const m3=document.getElementById("member3").value;
+  const m4=document.getElementById("member4").value;
+  const paymentStatus = paymentStatusInput.value;
+
+  let groupLink = "";
+  if(currentEvent === "Codewar"){
+    groupLink = "https://chat.whatsapp.com/LMsVK5Hz4DsLxWJKNlKPm0"; 
+  } else if(currentEvent === "Cyber Shield"){
+    groupLink = "https://chat.whatsapp.com/Lfq5ERDcrsP0hdXzcvo5qd"; 
+  } else if(currentEvent === "Model Exhibition"){
+    groupLink = "https://chat.whatsapp.com/L6tyqVwe0AaH9bECMHhAJb"; 
+  }
+
+  let msg = `Event: ${currentEvent}\nType: ${type}\nPhone: ${phoneVal}\nEmail: ${emailVal}\nUPI Txn: ${txn}\nPayment Status: ${paymentStatus}`;
+
+  if(type==="team"){
+    msg = `Event: ${currentEvent}\nType: ${type}\nMembers: 4\nNames: ${m1}, ${m2}, ${m3}, ${m4}\nPhone: ${phoneVal}\nEmail: ${emailVal}\nUPI Txn: ${txn}\nPayment Status: ${paymentStatus}`;
+  } else {
+    msg = `Event: ${currentEvent}\nType: ${type}\nMember: ${m1}\nPhone: ${phoneVal}\nEmail: ${emailVal}\nUPI Txn: ${txn}\nPayment Status: ${paymentStatus}`;
+  }
+
+  window.open(`${groupLink}?text=${encodeURIComponent(msg)}`);
+}
+</script>
 
 </body>
 </html>
