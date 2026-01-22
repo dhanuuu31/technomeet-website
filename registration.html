@@ -282,34 +282,51 @@ function continueRegistration(){
 }
 
 function sendWhatsApp(){
-  const txn=document.getElementById("txn").value;
-  const phoneVal=document.getElementById("phone").value;
-  const emailVal=document.getElementById("email").value;
-  const m1=document.getElementById("member1").value;
-  const m2=document.getElementById("member2").value;
-  const m3=document.getElementById("member3").value;
-  const m4=document.getElementById("member4").value;
-  const paymentStatus = paymentStatusInput.value;
+
+  const phoneVal=document.getElementById("phone").value.trim();
+  const emailVal=document.getElementById("email").value.trim();
+  const m1=document.getElementById("member1").value.trim();
+  const m2=document.getElementById("member2").value.trim();
+  const m3=document.getElementById("member3").value.trim();
+  const m4=document.getElementById("member4").value.trim();
+
+  if(!phoneVal){ alert("Please enter phone number"); return; }
+  if(!emailVal){ alert("Please enter email"); return; }
 
   let groupLink = "";
+
   if(currentEvent === "Codewar"){
-    groupLink = "https://chat.whatsapp.com/LMsVK5Hz4DsLxWJKNlKPm0"; 
-  } else if(currentEvent === "Cyber Shield"){
-    groupLink = "https://chat.whatsapp.com/Lfq5ERDcrsP0hdXzcvo5qd"; 
-  } else if(currentEvent === "Model Exhibition"){
-    groupLink = "https://chat.whatsapp.com/L6tyqVwe0AaH9bECMHhAJb"; 
+    groupLink = "https://chat.whatsapp.com/LMsVK5Hz4DsLxWJKNlKPm0";
+  }
+  else if(currentEvent === "Cyber Shield"){
+    groupLink = "https://chat.whatsapp.com/Lfq5ERDcrsP0hdXzcvo5qd";
+  }
+  else if(currentEvent === "Model Exhibition"){
+    groupLink = "https://chat.whatsapp.com/L6tyqVwe0AaH9bECMHhAJb";
   }
 
-  let msg = `Event: ${currentEvent}\nType: ${type}\nPhone: ${phoneVal}\nEmail: ${emailVal}\nUPI Txn: ${txn}\nPayment Status: ${paymentStatus}`;
+  let msg = "";
 
   if(type==="team"){
-    msg = `Event: ${currentEvent}\nType: ${type}\nMembers: 4\nNames: ${m1}, ${m2}, ${m3}, ${m4}\nPhone: ${phoneVal}\nEmail: ${emailVal}\nUPI Txn: ${txn}\nPayment Status: ${paymentStatus}`;
-  } else {
-    msg = `Event: ${currentEvent}\nType: ${type}\nMember: ${m1}\nPhone: ${phoneVal}\nEmail: ${emailVal}\nUPI Txn: ${txn}\nPayment Status: ${paymentStatus}`;
+    msg =
+`Event: ${currentEvent}
+Type: Team
+Members: ${m1}, ${m2}, ${m3}, ${m4}
+Phone: ${phoneVal}
+Email: ${emailVal}`;
+  }
+  else{
+    msg =
+`Event: ${currentEvent}
+Type: Individual
+Name: ${m1}
+Phone: ${phoneVal}
+Email: ${emailVal}`;
   }
 
-  window.open(`${groupLink}?text=${encodeURIComponent(msg)}`);
+  window.open(`${groupLink}?text=${encodeURIComponent(msg)}`, "_blank");
 }
+
 </script>
 
 </body>
