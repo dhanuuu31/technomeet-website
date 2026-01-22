@@ -50,10 +50,30 @@ button{width:100%;padding:14px;border-radius:14px;border:none;background:linear-
 .badge.pending{background:#ffc107}
 .badge.verified{background:#28a745}
 .badge.rejected{background:#dc3545}
+.backBtn{
+  position:fixed;
+  top:20px;
+  left:20px;
+  background:rgba(0,0,0,0.6);
+  color:#ffd700;
+  border:1px solid #ffd700;
+  padding:8px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+  z-index:1000;
+}
+.backBtn:hover{
+  background:#ffd700;
+  color:#000;
+}
+
 </style>
 </head>
 
 <body>
+  <button class="backBtn" onclick="goHome()">⬅</button>
+
 <div class="container">
 <div class="card">
 
@@ -149,7 +169,7 @@ You will upload it on the next Google Form page.
 -->
 
 <button onclick="continueRegistration()">Continue Registration</button>
-<button class="whatsapp" onclick="sendWhatsApp()">Submit via WhatsApp (Fallback)</button>
+<button class="whatsapp" onclick="sendWhatsApp()">Join via WhatsApp (Fallback)</button>
 
 </div>
 </div>
@@ -326,6 +346,10 @@ Email: ${emailVal}`;
 
   window.open(`${groupLink}?text=${encodeURIComponent(msg)}`, "_blank");
 }
+function goHome(){
+  window.location.href = "index.html";
+}
+
 
 </script>
 
