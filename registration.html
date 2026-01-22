@@ -51,28 +51,33 @@ button{width:100%;padding:14px;border-radius:14px;border:none;background:linear-
 .badge.verified{background:#28a745}
 .badge.rejected{background:#dc3545}
 .backBtn{
-  position:fixed;
-  top:20px;
-  left:20px;
-  background:rgba(0,0,0,0.6);
-  color:#ffd700;
-  border:1px solid #ffd700;
-  padding:8px 14px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:700;
-  z-index:1000;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+
+  background: none;
+  border: none;
+
+  color: #ffd700;
+  font-size: 18px;   /* small size */
+  font-weight: 900;
+
+  padding: 4px 6px;
+  cursor: pointer;
+
+  z-index: 1000;
 }
+
 .backBtn:hover{
-  background:#ffd700;
-  color:#000;
+  transform: scale(1.2);
 }
 
 </style>
 </head>
 
 <body>
-  <button class="backBtn" onclick="goHome()">⬅</button>
+  <button class="backBtn" onclick="goHome()">←</button>
+
 
 <div class="container">
 <div class="card">
@@ -349,7 +354,6 @@ Email: ${emailVal}`;
 function goHome(){
   window.location.href = "index.html";
 }
-
 
 </script>
 
