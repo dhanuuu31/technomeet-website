@@ -389,24 +389,26 @@ slider.addEventListener('wheel', (e)=>{
   slider.scrollLeft += e.deltaY;
 });
 
-// ======================
-// MOBILE HAMBURGER MENU
-// ======================
 const hamburger = document.getElementById("hamburger");
-const navLinks = document.querySelector(".nav-links");
+const navLinks = document.getElementById("navLinks");
 const menuIcon = document.getElementById("menuIcon");
 
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 
-  // Icon switch
   if (navLinks.classList.contains("active")) {
-    menuIcon.classList.remove("fa-bars");
-    menuIcon.classList.add("fa-times");
+    menuIcon.classList.replace("fa-bars", "fa-times");
   } else {
-    menuIcon.classList.remove("fa-times");
-    menuIcon.classList.add("fa-bars");
+    menuIcon.classList.replace("fa-times", "fa-bars");
   }
+});
+
+/* close when link clicked */
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuIcon.classList.replace("fa-times", "fa-bars");
+  });
 });
 
 // Close menu when any link is clicked (mobile)
