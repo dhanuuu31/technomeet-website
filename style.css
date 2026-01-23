@@ -1381,37 +1381,57 @@ body{
   font-size: 12px;
 }
 
-.hamburger {
-  display: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
-/* ===== MOBILE NAV ===== */
+/* ======================
+   MOBILE NAVBAR (FIXED)
+====================== */
 @media (max-width: 768px) {
 
-  .hamburger {
-    display: block;
+  /* container layout */
+  .nav-container {
+    justify-content: flex-start;
+    gap: 15px;
   }
 
+  /* hamburger LEFT side */
+  .hamburger {
+    display: block;
+    font-size: 26px;
+    color: #ffd200;
+    cursor: pointer;
+  }
+
+  /* hide menu by default */
   .nav-links {
     position: absolute;
     top: 70px;
-    left: -100%;
+    left: 0;
     width: 100%;
-    background: #000;
+    background: #0b0b0b;
+
     flex-direction: column;
-    text-align: center;
-    padding: 20px 0;
-    transition: 0.3s;
+    align-items: center;
+
+    transform: translateY(-120%);
+    transition: transform 0.35s ease;
+
+    padding: 25px 0;
   }
 
   .nav-links li {
-    margin: 15px 0;
+    margin: 18px 0;
   }
 
-  /* show menu when active */
+  /* show menu */
   .nav-links.active {
-    left: 0;
+    transform: translateY(0);
+  }
+
+  /* disable hover dropdown on mobile */
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-menu {
+    position: static;
   }
 }

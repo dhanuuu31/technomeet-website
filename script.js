@@ -389,7 +389,6 @@ slider.addEventListener('wheel', (e)=>{
   slider.scrollLeft += e.deltaY;
 });
 
-// MOBILE HAMBURGER MENU
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.querySelector(".nav-links");
 
