@@ -1381,52 +1381,29 @@ body{
   font-size: 12px;
 }
 
-/* ======================MOBILE RESPONSIVE FIX====================== */
-
 @media (max-width: 768px) {
 
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+
   .nav-container {
-    flex-direction: column;
+    flex-direction: row;   
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
   }
 
   .nav-links {
-    flex-direction: column;
-    text-align: center;
+    display: flex;        
+    flex-direction: row;  
+    gap: 15px;
   }
 
-  .events-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .event-card {
-    height: 300px;
-  }
-
-  .title {
-    font-size: 30px;
-  }
-
-  .codewar-container {
-    flex-direction: column;
-  }
-
-  .format-container,
-  .prepare-container {
-    padding: 30px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .title {
-    font-size: 26px;
-  }
-
-  .event-overlay h3 {
-    font-size: 20px;
-  }
-
-  .event-overlay p {
-    font-size: 13px;
+  .nav-links a {
+    font-size: 14px;
   }
 }
