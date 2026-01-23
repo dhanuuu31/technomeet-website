@@ -449,16 +449,11 @@ footer p {
 }
 
 .section-title {
-  font-size: 42px;
-  font-weight: 800;
+  text-align: center;
   color: #b30000;
+  font-size: 42px; /* pick one */
+  font-weight: 800; /* pick one */
   letter-spacing: 1px;
-}
-
-.section-subtitle {
-  margin-top: 10px;
-  color: #555;
-  font-size: 16px;
 }
 
 .events-grid {
@@ -665,17 +660,6 @@ footer p {
   margin: 10px 0 50px;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.tig-card {
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-}
-
 .card-image {
   position: relative;
   height: 260px;
@@ -723,10 +707,6 @@ footer p {
   text-decoration: none;
   display: inline-block;
 }
-.tig-highlights {
-  padding: 80px 0;
-  background: #fff;
-}
 
 .section-title {
   text-align: center;
@@ -753,7 +733,8 @@ footer p {
 
 /* Card styling */
 .tig-card {
-  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   cursor: pointer;
   transition: transform .4s ease;
   width: 380px;      /* slightly smaller width for tighter layout */

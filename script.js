@@ -389,27 +389,20 @@ slider.addEventListener('wheel', (e)=>{
   slider.scrollLeft += e.deltaY;
 });
 
-// ======================
-// CLEAN MOBILE HAMBURGER (WORKING)
-// ======================
-
 const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks"); // matches HTML
+const navLinks = document.getElementById("navLinks");
 
 if (hamburger && navLinks) {
-  // Toggle menu
   hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
 
-  // Close menu when link clicked
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
     });
   });
 
-  // Reset on desktop resize
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       navLinks.classList.remove("active");
