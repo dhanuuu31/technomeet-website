@@ -1380,3 +1380,53 @@ body{
   margin-left: 6px;
   font-size: 12px;
 }
+
+/* ======================MOBILE RESPONSIVE FIX====================== */
+
+@media (max-width: 768px) {
+
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card {
+    height: 300px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .codewar-container {
+    flex-direction: column;
+  }
+
+  .format-container,
+  .prepare-container {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .title {
+    font-size: 26px;
+  }
+
+  .event-overlay h3 {
+    font-size: 20px;
+  }
+
+  .event-overlay p {
+    font-size: 13px;
+  }
+}
