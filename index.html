@@ -109,43 +109,28 @@
 
 </head>
 <body>
-<!-- ======================
-     HEADER / NAVBAR
-====================== -->
-<header class="navbar">
+
+<nav class="navbar">
   <div class="nav-container">
-
     <div class="nav-left">
-      <img src="technomeet_logo.png" class="logo" alt="Logo">
-      <span class="site-title">TECHNOMEET 2K26</span>
+      <img src="logo.png" class="logo" alt="Logo">
+      <span class="site-title">MySite</span>
     </div>
-    <!-- HAMBURGER -->
-  <div id="hamburger" class="hamburger">
-    ☰
-  </div>
 
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-  <a href="#" class="dropdown-toggle">
-    Events <i class="fas fa-caret-down"></i>
-  </a>
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <i id="menuIcon" class="fa fa-bars"></i>
+    </div>
 
-  <ul class="dropdown-menu">
-    <li><a href="event.html">All Events</a></li>
-    <li><a href="codewar.html">CodeWar</a></li>
-    <li><a href="cybershield.html">Cyber Shield</a></li>
-    <li><a href="projectexpo.html">Project Expo</a></li>
-  </ul>
-</li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="coordinators.html">Coordinators</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="registration.html" class="Register">Register</a></li>
-    </ul>
+    <ul class="nav-links" id="navLinks">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#events">Events</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
 
   </div>
-</header>
+</nav>
 
 <!-- ======================
      HERO SLIDER
@@ -567,7 +552,7 @@
 </a>
 </div>
 
-<script src="script.js" defer></script>
+<script src="script.js"></script>
 
 </body>
 </html>
