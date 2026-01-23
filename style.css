@@ -14,10 +14,10 @@ body {
    NAVBAR
 ====================== */
 .navbar {
-  z-index: 9999999999;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999999;
   background: rgba(0,0,0,0.9);
   pointer-events: auto;
 }
@@ -52,7 +52,6 @@ body {
   display: flex;
   align-items: center;
   gap: 22px;
-  z-index: 100000000000;  /* higher than navbar */
 }
 
 
@@ -75,6 +74,7 @@ body {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  pointer-events: none;
 }
 
 /* Slide background */
@@ -1237,9 +1237,16 @@ footer p {
   --dark-triangle-height: 40%; 
 }
 
-/* =================================================
-   GALLERY SCROLL SLIDER
-================================================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#000;
+  font-family:Arial, sans-serif;
+}
 
 /* Scroll Container */
 .scroll-slider{
@@ -1270,20 +1277,20 @@ footer p {
   display:block;
 }
 
-/* LEFT triangle */
+/* LEFT dark triangle at bottom-left */
 .scroll-item::before{
   content:'';
   position:absolute;
   bottom:0;
   left:0;
-  width: var(--dark-triangle-width, 120px);
-  height: var(--dark-triangle-height, 120px);
-  background: rgba(255,193,7,0.9);
+  width: var(--dark-triangle-width);
+  height: var(--dark-triangle-height);
+  background: rgba(255, 193, 7, 0.9);
   clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
   pointer-events:none;
 }
 
-/* RIGHT triangle */
+/* RIGHT light triangle */
 .scroll-item::after{
   content:''; 
   position:absolute;
@@ -1291,31 +1298,27 @@ footer p {
   right:0;
   width:100%;
   height:100%;
-  background: rgba(255,215,0,0.6);
+  background: rgba(255, 215, 0, 0.6);
   clip-path: polygon(45% 100%, 100% 70%, 100% 100%);
   pointer-events:none;
 }
 
-
-/* =================================================
-   SCROLL BUTTON
-================================================= */
-
+/* Scroll Button */
 .scroll-button-container{
   text-align:center;
-  margin:70px 0 100px;
+  margin:70px 0 100px 0; /* move button lower */
 }
 
 .scroll-button{
-  background:#ffd400;
-  color:#000;
+  background: #ffd400;
+  color: #000;
   font-size:18px;
   font-weight:bold;
   padding:12px 30px;
   border:none;
   border-radius:8px;
   cursor:pointer;
-  transition:all 0.3s;
+  transition: all 0.3s;
 }
 
 .scroll-button:hover{
@@ -1323,192 +1326,202 @@ footer p {
   transform:scale(1.05);
 }
 
-
-/* =================================================
-   RESPONSIVE GALLERY
-================================================= */
-
+/* Responsive */
 @media(max-width:900px){
   .scroll-item{
     flex:0 0 75%;
   }
 }
 
-
-/* container */
-.nav-container{
-  width:95%;
-  margin:auto;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+/* ======================
+   NAVBAR DROPDOWN
+====================== */
+.nav-links li {
+  position: relative;
 }
 
-
-/* =================================================
-   LOGO AREA
-================================================= */
-
-.nav-left{
-  display:flex;
-  align-items:center;
-  gap:10px;
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #111;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 1000;
 }
 
-.logo{
-  height:45px;
+/* Dropdown links */
+.dropdown-menu li a {
+  padding: 10px 16px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.site-title{
-  color:white;
-  font-weight:bold;
+/* Hover effect */
+.dropdown-menu li a:hover {
+  background-color: #f5c400;
+  color: #000;
 }
 
-
-/* =================================================
-   DESKTOP LINKS
-================================================= */
-
-@media (max-width:768px){
-
-  .hamburger{
-    display:block;
-  }
-
-  .nav-links{
-    position:fixed;
-    top:0;
-    right:-100%;
-    height:100vh;
-    width:75%;
-    background:#000;
-
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:30px;
-
-    transition:right 0.35s ease;
-
-    z-index: 100000000000; /* 🔥 FIXED */
-  }
-
-  .nav-links.active{
-    right:0;
-  }
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
-
-/* =================================================
-   DROPDOWN
-================================================= */
-
-.nav-links li{
-  position:relative;
+/* Caret spacing */
+.dropdown-toggle i {
+  margin-left: 6px;
+  font-size: 12px;
 }
 
-/* hidden */
-.dropdown-menu{
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#111;
-  min-width:180px;
-
-  display:none;
-  flex-direction:column;
-
-  border-radius:6px;
-  padding:8px 0;
-  z-index:1000;
-}
-
-.dropdown-menu li a{
-  padding:10px 16px;
-  display:block;
-  color:#fff;
-  font-size:14px;
-}
-
-.dropdown-menu li a:hover{
-  background:#f5c400;
-  color:#000;
-}
-
-/* desktop hover */
-.dropdown:hover .dropdown-menu{
-  display:block;
-}
-
-.dropdown-toggle i{
-  margin-left:6px;
-  font-size:12px;
-}
-
-
-.hamburger {
+/* ======================
+   NAVBAR BASE
+====================== */
+.navbar {
   position: fixed;
-  top: 18px;
-  right: 20px;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  z-index: 99999999999; /* VERY HIGH */
-  display: none;  /* ❌ THIS HIDES IT BY DEFAULT */
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(0,0,0,0.9);
   pointer-events: auto;
 }
 
-@media (max-width:768px){
-  .hamburger{
-    display:block; /* ✅ Should appear on small screens */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 50px;
+}
+
+.site-title {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffd200;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f6c600;
+}
+
+/* Dropdown */
+.nav-links li {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  min-width: 150px;
+  display: none;
+  flex-direction: column;
+  border-radius: 6px;
+  padding: 5px 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li a {
+  padding: 10px 16px;
+  display: block;
+  color: #fff;
+}
+
+.dropdown-menu li a:hover {
+  background: #f5c400;
+  color: #000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ======================
+   HAMBURGER MENU
+====================== */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 75%;
+    height: 100vh;
+    background: #0b0b0b;
+    flex-direction: column;
+    padding-top: 40px;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 10000;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.active li {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: calc(var(--i) * 0.05s);
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    padding: 12px 20px;
   }
 }
 
-
-
-/* =================================================
-   EVENTS RESPONSIVE (FIXED MEDIA QUERY)
-================================================= */
-
-@media (max-width:768px){
-
-  .events-grid{
-    grid-template-columns:1fr;
-  }
-
-  .event-card{
-    height:300px;
-  }
-
-  .title{
-    font-size:30px;
-  }
-
-  .codewar-container{
-    flex-direction:column;
-  }
-
-  .format-container,
-  .prepare-container{
-    padding:30px 20px;
-  }
+/* Navbar scroll effect */
+.navbar.scrolled {
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
 }
-
-
-/* smaller phones */
-@media (max-width:480px){
-
-  .title{
-    font-size:26px;
-  }
-
-  .event-overlay h3{
-    font-size:20px;
-  }
-
-  .event-overlay p{
-    font-size:13px;
-  }
-}
-
