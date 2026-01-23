@@ -396,16 +396,17 @@ const hamburger = document.getElementById("hamburger");
 const navLinks = document.querySelector(".nav-links");
 const menuIcon = document.getElementById("menuIcon");
 
-// Toggle menu
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 
-  // Toggle icon
-  menuIcon.classList.toggle("fa-bars");
-  menuIcon.classList.toggle("fa-times");
-
-  // Disable scroll when menu open
-  document.body.style.overflow = navLinks.classList.contains("active") ? "hidden" : "auto";
+  // Icon switch
+  if (navLinks.classList.contains("active")) {
+    menuIcon.classList.remove("fa-bars");
+    menuIcon.classList.add("fa-times");
+  } else {
+    menuIcon.classList.remove("fa-times");
+    menuIcon.classList.add("fa-bars");
+  }
 });
 
 // Close menu when any link is clicked (mobile)
