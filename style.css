@@ -1469,11 +1469,11 @@ body{
    HAMBURGER MENU
 ====================== */
 .hamburger {
-  display: none;
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   z-index: 10001;
+  cursor: pointer;
 }
 
 /* Mobile */
@@ -1481,7 +1481,7 @@ body{
   .hamburger {
     display: block;
   }
-}
+
 
   .nav-links {
     position: fixed;
