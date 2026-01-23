@@ -389,9 +389,23 @@ slider.addEventListener('wheel', (e)=>{
   slider.scrollLeft += e.deltaY;
 });
 
+/* ======================
+   MOBILE HAMBURGER MENU
+====================== */
+
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.querySelector(".nav-links");
+const menuIcon = document.getElementById("menuIcon");
 
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+
+  // icon change
+  if (navLinks.classList.contains("active")) {
+    menuIcon.classList.remove("fa-bars");
+    menuIcon.classList.add("fa-times");
+  } else {
+    menuIcon.classList.remove("fa-times");
+    menuIcon.classList.add("fa-bars");
+  }
 });
