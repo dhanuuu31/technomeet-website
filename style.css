@@ -1403,11 +1403,11 @@ body{
 
 /* Hamburger styling (ensure it’s above the menu) */
 .hamburger {
-  display: block;
+  display: none;
   font-size: 26px;
   color: white;
   cursor: pointer;
-  z-index: 1000001;
+  z-index: 10000000;
 }
 
 /* Optional: animate links inside menu */
@@ -1436,7 +1436,7 @@ body{
   }
 
   .hamburger {
-    display: none;
+    display: block;
   }
 }
 
