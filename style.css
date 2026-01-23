@@ -1381,35 +1381,24 @@ body{
 }
 
 /* ======================
-   NAVBAR
+   NAVBAR BASE
 ====================== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 70px;
-
-  background: rgba(0,0,0,0.95);
-
-  display: flex;
-  align-items: center;
-
-  z-index: 999999999;
+  z-index: 9999;
+  background: rgba(0,0,0,0.9);
+  pointer-events: auto;
 }
 
-/* container */
 .nav-container {
-  width: 95%;
-  margin: auto;
-
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
-/* ======================
-   LEFT LOGO
-====================== */
 .nav-left {
   display: flex;
   align-items: center;
@@ -1417,76 +1406,95 @@ body{
 }
 
 .logo {
-  height: 45px;
+  height: 50px;
 }
 
 .site-title {
-  color: white;
-  font-weight: bold;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
 }
 
-/* ======================
-   DESKTOP LINKS
-====================== */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 20px;
 }
 
-.nav-links a {
-  color: white;
+.nav-links li a {
   text-decoration: none;
+  color: #ffd200;
+  font-size: 15px;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: #00e5ff;
+.nav-links li a:hover {
+  color: #f6c600;
+}
+
+/* Dropdown */
+.nav-links li {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  min-width: 150px;
+  display: none;
+  flex-direction: column;
+  border-radius: 6px;
+  padding: 5px 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li a {
+  padding: 10px 16px;
+  display: block;
+  color: #fff;
+}
+
+.dropdown-menu li a:hover {
+  background: #f5c400;
+  color: #000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 /* ======================
-   HAMBURGER (VERY IMPORTANT)
+   HAMBURGER MENU
 ====================== */
 .hamburger {
-  position: fixed;
-  top: 18px;
-  right: 20px;
-
-  font-size: 28px;
-  color: white;
-
-  cursor: pointer;
-
-  z-index: 9999999999;
-
   display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  z-index: 10001;
 }
 
-/* ======================
-   MOBILE
-====================== */
+/* Mobile */
 @media (max-width: 768px) {
-
   .hamburger {
     display: block;
   }
+
 
   .nav-links {
     position: fixed;
     top: 70px;
     right: 0;
-
     width: 75%;
     height: 100vh;
-
     background: #0b0b0b;
-
     flex-direction: column;
-    padding: 40px 25px;
-
+    padding-top: 40px;
     transform: translateX(100%);
-    transition: 0.3s;
-
-    z-index: 99999999;
+    transition: transform 0.4s ease-in-out;
+    z-index: 10000;
   }
 
   .nav-links.active {
@@ -1494,25 +1502,55 @@ body{
   }
 
   .nav-links li {
-    margin: 15px 0;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.active li {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: calc(var(--i) * 0.05s);
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    padding: 12px 20px;
   }
 }
 
-/* ======================
-   DEMO SLIDE
-   (IMPORTANT FIX)
-====================== */
-.slide {
-  height: 100vh;
-  background: linear-gradient(45deg,#111,#222);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Navbar scroll effect */
+.navbar.scrolled {
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffd200;
+  }
 
-  pointer-events: none; /* prevents blocking clicks */
-}
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: #0b0b0b;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: right 0.4s ease;
+  }
 
-.slide-content {
-  color: white;
-  pointer-events: none;
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li a {
+    font-size: 22px;
+  }
 }
