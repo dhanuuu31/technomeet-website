@@ -1382,25 +1382,28 @@ body{
 }
 
 /* ======================
-   MOBILE NAVBAR (FIXED)
+   MOBILE NAVBAR FINAL
 ====================== */
 @media (max-width: 768px) {
 
-  /* container layout */
-  .nav-container {
-    justify-content: flex-start;
-    gap: 15px;
+  .navbar {
+    z-index: 10000;
   }
 
-  /* hamburger LEFT side */
+  .nav-container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .hamburger {
     display: block;
     font-size: 26px;
     color: #ffd200;
     cursor: pointer;
+    z-index: 99999;
+    position: relative;
   }
 
-  /* hide menu by default */
   .nav-links {
     position: absolute;
     top: 70px;
@@ -1415,23 +1418,14 @@ body{
     transition: transform 0.35s ease;
 
     padding: 25px 0;
+    z-index: 9999;
   }
 
-  .nav-links li {
-    margin: 18px 0;
-  }
-
-  /* show menu */
   .nav-links.active {
     transform: translateY(0);
   }
 
-  /* disable hover dropdown on mobile */
-  .dropdown:hover .dropdown-menu {
-    display: none;
-  }
-
-  .dropdown-menu {
-    position: static;
+  .nav-links li {
+    margin: 18px 0;
   }
 }
