@@ -1380,38 +1380,63 @@ body{
   font-size: 12px;
 }
 
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 70px;
-    right: 0;
-    width: 75%;
-    height: 100vh;
-
-    background: #0b0b0b;
-
-    flex-direction: column;
-    padding-top: 40px;
-
-    transform: translateX(100%);
-    transition: 0.3s ease;
-
-    z-index: 1000000;
-  }
-
-  .nav-links.active {
-    transform: translateX(0);
-  }
+/* ======================
+   MOBILE NAVIGATION SLIDE
+====================== */
+.nav-links {
+  position: fixed;
+  top: 70px;               /* below navbar */
+  right: 0;
+  width: 75%;
+  height: 100vh;
+  background: #0b0b0b;
+  flex-direction: column;
+  padding-top: 40px;
+  transform: translateX(100%);  /* start off-screen */
+  transition: transform 0.4s ease-in-out; /* smooth slide */
+  z-index: 1000000;
 }
 
+.nav-links.active {
+  transform: translateX(0);      /* slide into view */
+}
+
+/* Hamburger styling (ensure it’s above the menu) */
 .hamburger {
-  display: none;
+  display: block;
   font-size: 26px;
   color: white;
   cursor: pointer;
   z-index: 1000001;
 }
+
+/* Optional: animate links inside menu */
+.nav-links li {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.4s ease;
+}
+
+.nav-links.active li {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: calc(var(--i) * 0.05s); /* optional stagger */
+}
+
+/* Responsive adjustments */
+@media (min-width: 769px) {
+  .nav-links {
+    position: static;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    transform: translateX(0);
+    background: none;
+    padding-top: 0;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
