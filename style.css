@@ -1447,10 +1447,6 @@ footer p {
 }
 
 
-/* =================================================
-   HAMBURGER
-================================================= */
-
 .hamburger {
   position: fixed;
   top: 18px;
@@ -1458,10 +1454,16 @@ footer p {
   font-size: 28px;
   color: white;
   cursor: pointer;
-  z-index: 99999999999; /* VERY HIGH */
-  display: none;
-  pointer-events: auto;
+  z-index: 9999;
+  display: none; /* hide by default */
 }
+
+@media (max-width: 1024px) { /* make the breakpoint higher for tablets & mobiles */
+  .hamburger {
+    display: block; /* show hamburger */
+  }
+}
+
 
 
 /* =================================================
