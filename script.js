@@ -394,27 +394,25 @@ slider.addEventListener('wheel', (e)=>{
 // ======================
 
 const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+const navLinks = document.getElementById("navLinks"); // matches HTML
 
 if (hamburger && navLinks) {
-
-  // open / close
+  // Toggle menu
   hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
 
-  // close when link clicked
+  // Close menu when link clicked
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
     });
   });
 
-  // reset on desktop resize
+  // Reset on desktop resize
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       navLinks.classList.remove("active");
     }
   });
-
 }
