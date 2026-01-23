@@ -34,17 +34,6 @@ if (slides.length > 0) {
   showSlide(index);             // initial display
 }
 
-// ======================
-// MOBILE MENU
-// ======================
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active"); // toggle nav for mobile
-  });
-}
 
 // ======================
 // COUNTDOWN TIMER (PREMIUM & SAFE)
@@ -400,3 +389,10 @@ slider.addEventListener('wheel', (e)=>{
   slider.scrollLeft += e.deltaY;
 });
 
+// MOBILE HAMBURGER MENU
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});

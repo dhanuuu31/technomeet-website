@@ -1381,29 +1381,37 @@ body{
   font-size: 12px;
 }
 
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+/* ===== MOBILE NAV ===== */
 @media (max-width: 768px) {
 
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-  }
-
-  .nav-container {
-    flex-direction: row;   
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+  .hamburger {
+    display: block;
   }
 
   .nav-links {
-    display: flex;        
-    flex-direction: row;  
-    gap: 15px;
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background: #000;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    transition: 0.3s;
   }
 
-  .nav-links a {
-    font-size: 14px;
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  /* show menu when active */
+  .nav-links.active {
+    left: 0;
   }
 }
