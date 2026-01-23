@@ -1461,58 +1461,52 @@ body{
   display: none;
 }
 
-/* ======================
-   MOBILE
-====================== */
+/* ======================MOBILE RESPONSIVE FIX====================== */
+
 @media (max-width: 768px) {
 
-  .hamburger {
-    display: block;
+  .nav-container {
+    flex-direction: column;
   }
 
   .nav-links {
-    position: fixed;
-    top: 70px;
-    right: 0;
-
-    width: 75%;
-    height: 100vh;
-
-    background: #0b0b0b;
-
     flex-direction: column;
-    padding: 40px 25px;
-
-    transform: translateX(100%);
-    transition: 0.3s;
-
-    z-index: 99999999;
+    text-align: center;
   }
 
-  .nav-links.active {
-    transform: translateX(0);
+  .events-grid {
+    grid-template-columns: 1fr;
   }
 
-  .nav-links li {
-    margin: 15px 0;
+  .event-card {
+    height: 300px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .codewar-container {
+    flex-direction: column;
+  }
+
+  .format-container,
+  .prepare-container {
+    padding: 30px 20px;
   }
 }
 
-/* ======================
-   DEMO SLIDE
-   (IMPORTANT FIX)
-====================== */
-.slide {
-  height: 100vh;
-  background: linear-gradient(45deg,#111,#222);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (max-width: 480px) {
 
-  pointer-events: none; /* prevents blocking clicks */
-}
+  .title {
+    font-size: 26px;
+  }
 
-.slide-content {
-  color: white;
-  pointer-events: none;
+  .event-overlay h3 {
+    font-size: 20px;
+  }
+
+  .event-overlay p {
+    font-size: 13px;
+  }
 }
