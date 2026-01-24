@@ -8,35 +8,91 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="event.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  /* hamburger */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+  gap:5px;
+}
+
+.menu-toggle span{
+  width:25px;
+  height:3px;
+  background:#fff;
+}
+
+/* MOBILE ONLY */
+@media(max-width:900px){
+
+  .menu-toggle{
+    display:flex;
+  }
+
+  .nav-container{
+    position:relative;
+  }
+
+  /* FORCE HIDE */
+  .nav-links{
+    display:none !important;   /* ⭐ force hide */
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#111;
+    flex-direction:column;
+    text-align:center;
+    padding:15px 0;
+    z-index:9999;
+  }
+
+  /* FORCE SHOW */
+  .nav-links.show{
+    display:flex !important;   /* ⭐ force show */
+  }
+
+  .nav-links li{
+    margin:15px 0;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <!-- ======================
-     HEADER / NAVBAR
+     HEADER / NAVBAR (UPDATED)
 ====================== -->
 <header class="navbar">
   <div class="nav-container">
 
     <div class="nav-left">
       <img src="technomeet_logo.png" class="logo" alt="Logo">
-      <span class="site-title">TECHNOMEET 2K26</span>
+      <span class="site-title">TECHH 2K26</span>
     </div>
 
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-  <a href="#" class="dropdown-toggle">
-    Events <i class="fas fa-caret-down"></i>
-  </a>
+    <!-- HAMBURGER BUTTON -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <ul class="dropdown-menu">
-    <li><a href="event.html">All Events</a></li>
-    <li><a href="codewar.html">CodeWar</a></li>
-    <li><a href="cybershield.html">Cyber Shield</a></li>
-    <li><a href="projectexpo.html">Project Expo</a></li>
-  </ul>
-</li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#">Events <i class="fas fa-caret-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="event.html">All Events</a></li>
+          <li><a href="codewar.html">CodeWar</a></li>
+          <li><a href="cybershield.html">Cyber Shield</a></li>
+          <li><a href="projectexpo.html">Project Expo</a></li>
+        </ul>
+      </li>
+
       <li><a href="about.html">About</a></li>
       <li><a href="coordinators.html">Coordinators</a></li>
       <li><a href="contact.html">Contact</a></li>
