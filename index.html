@@ -105,10 +105,7 @@
   background-color: #e6e200;
 }
 
-/* =================================================
-   HAMBURGER NAVBAR (NEW ADDED)
-================================================= */
-
+/* hamburger */
 .menu-toggle{
   display:none;
   flex-direction:column;
@@ -120,42 +117,43 @@
   width:25px;
   height:3px;
   background:#fff;
-  transition:0.3s;
 }
 
-/* mobile nav */
+/* MOBILE ONLY */
 @media(max-width:900px){
 
   .menu-toggle{
     display:flex;
   }
 
+  .nav-container{
+    position:relative;
+  }
+
+  /* FORCE HIDE */
   .nav-links{
+    display:none !important;   /* ⭐ force hide */
     position:absolute;
     top:100%;
     left:0;
-    background:#111;
     width:100%;
+    background:#111;
     flex-direction:column;
     text-align:center;
-    max-height:0;
-    overflow:hidden;
-    transition:max-height 0.4s ease;
-    z-index:999;
+    padding:15px 0;
+    z-index:9999;
   }
 
+  /* FORCE SHOW */
   .nav-links.show{
-    max-height:600px;
+    display:flex !important;   /* ⭐ force show */
   }
-  .nav-container{
-  position: relative;
-}
-
 
   .nav-links li{
-    margin:18px 0;
+    margin:15px 0;
   }
 }
+
 </style>
 
 </head>
@@ -169,7 +167,7 @@
 
     <div class="nav-left">
       <img src="technomeet_logo.png" class="logo" alt="Logo">
-      <span class="site-title">TECH 2K26</span>
+      <span class="site-title">TECHH 2K26</span>
     </div>
 
     <!-- HAMBURGER BUTTON -->
