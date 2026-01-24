@@ -109,31 +109,23 @@
    NAVBAR RESPONSIVE FIX
 ========================= */
 
-/* DESKTOP DEFAULT */
+/* always show hamburger */
+.menu-toggle{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+/* desktop nav */
 .nav-links{
   display:flex;
-  flex-direction:row;
-  align-items:center;
   gap:22px;
 }
 
-/* hide hamburger on desktop */
-.menu-toggle{
-  display:none;
-}
+/* mobile dropdown */
+@media(max-width:900px){
 
-
-/* =========================
-   MOBILE ONLY
-========================= */
-@media (max-width:900px){
-
-  /* show hamburger */
-  .menu-toggle{
-    display:flex;
-  }
-
-  /* stack menu vertically */
   .nav-links{
     display:none !important;
     flex-direction:column;
@@ -142,14 +134,13 @@
     left:0;
     width:100%;
     background:#111;
-    padding:20px 0;
-    text-align:center;
   }
 
   .nav-links.show{
     display:flex !important;
   }
 }
+
 
 </style>
 
