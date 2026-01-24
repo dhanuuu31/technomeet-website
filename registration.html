@@ -293,10 +293,22 @@ function continueRegistration(){
   if(!phoneVal){ alert("Please enter phone number"); return; }
   if(!emailVal){ alert("Please enter email"); return; }
 
-  if(type==="team" && (!m1||!m2||!m3||!m4)){ 
-    alert("Please enter all team member names"); 
-    return; 
+  if(type === "team") {
+
+  let requiredSize = currentEvent === "Cyber Shield"
+      ? parseInt(teamSize.value)
+      : 4; // other events default 4
+
+  const memberValues = [m1, m2, m3, m4];
+
+  for(let i = 0; i < requiredSize; i++){
+    if(!memberValues[i]){
+      alert(`Please enter Participant ${i+1} name`);
+      return;
+    }
   }
+}
+
 
   const formURL =
   "https://docs.google.com/forms/d/e/1FAIpQLScbg_fCpTsEybqZzMQI_wDbuHYZWrBNxEEnErGhT9DhcrOATw/viewform?usp=pp_url"
