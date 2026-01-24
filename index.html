@@ -105,42 +105,54 @@
   background-color: #e6e200;
 }
 
-/* =========================
-   NAVBAR RESPONSIVE FIX
-========================= */
-
-/* always show hamburger */
+/* hamburger */
 .menu-toggle{
-  display:flex;
+  display:none;
   flex-direction:column;
-  gap:5px;
   cursor:pointer;
+  gap:5px;
 }
 
-/* desktop nav */
-.nav-links{
-  display:flex;
-  gap:22px;
+.menu-toggle span{
+  width:25px;
+  height:3px;
+  background:#fff;
 }
 
-/* mobile dropdown */
+/* MOBILE ONLY */
 @media(max-width:900px){
 
+  .menu-toggle{
+    display:flex;
+  }
+
+  .nav-container{
+    position:relative;
+  }
+
+  /* FORCE HIDE */
   .nav-links{
-    display:none !important;
-    flex-direction:column;
+    display:none !important;   /* ⭐ force hide */
     position:absolute;
     top:100%;
     left:0;
     width:100%;
     background:#111;
+    flex-direction:column;
+    text-align:center;
+    padding:15px 0;
+    z-index:9999;
   }
 
+  /* FORCE SHOW */
   .nav-links.show{
-    display:flex !important;
+    display:flex !important;   /* ⭐ force show */
+  }
+
+  .nav-links li{
+    margin:15px 0;
   }
 }
-
 
 </style>
 
