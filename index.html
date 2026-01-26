@@ -153,6 +153,51 @@
     margin:15px 0;
   }
 }
+/* =================================
+   ABOUT SECTION FIX – MOBILE ONLY
+================================= */
+@media (max-width: 900px){
+
+  .about-experience{
+    height: auto;          /* remove fixed height */
+    padding: 80px 20px;    /* breathing space */
+  }
+
+  .about-overlay{
+    padding: 40px 20px;
+  }
+
+  .about-title{
+    font-size: 30px;
+  }
+
+  .about-subtitle{
+    font-size: 14px;
+  }
+
+  .about-stats{
+    grid-template-columns: 1fr;  /* stack vertically */
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .stat-box h3{
+    font-size: 28px;
+  }
+
+  .about-actions{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top: 35px;
+  }
+
+  .about-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+  }
+}
 
 </style>
 
@@ -588,10 +633,6 @@
      data-tooltip="Contact Us">
     <i class="fas fa-address-book"></i>
   </a>
-</div>
-
-</div>
-
 </div>
 
 
