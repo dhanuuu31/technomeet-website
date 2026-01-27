@@ -199,32 +199,71 @@
   }
 }
 /* ======================
-   SPONSOR SECTION
+   SPONSOR (Inside Gallery)
 ====================== */
+
 .sponsor-container {
   text-align: center;
-  margin-top: 35px;
-  padding-bottom: 25px;
+  margin-top: 60px;
+  padding: 40px 20px;
 }
 
-.sponsor-text {
-  font-size: 28px;
-  font-weight: 600;
+/* Title */
+.sponsor-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffd700; /* gold/yellow highlight */
   margin-bottom: 15px;
-  color: #430606;
   letter-spacing: 1px;
 }
 
+/* Description text */
+.sponsor-subtitle {
+  max-width: 850px;
+  margin: 0 auto 35px auto;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #d6d6d6;
+}
+
+/* Logo container */
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Logo image */
 .sponsor-logos img {
-  height: 80px;
+  height: 85px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* Hover effect */
 .sponsor-logos img:hover {
   transform: scale(1.1);
 }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .sponsor-title {
+    font-size: 28px;
+  }
+
+  .sponsor-subtitle {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .sponsor-logos img {
+    height: 65px;
+  }
+}
+
 
 </style>
 
@@ -500,8 +539,11 @@
 
 <!-- Sponsor Section -->
 <div class="sponsor-container">
-  <p class="sponsor-text">SPONSORED BY</p>
-
+    <h2 class="sponsor-title">Our Sponsors</h2>
+      <p class="sponsor-subtitle">
+              We are grateful to our amazing sponsors who make Technomeet possible.
+                  Their support helps us create an unforgettable experience for everyone.
+      </p>
   <div class="sponsor-logos">
   <a href="https://www.jdsolutionss.com/" target="_blank">
     <img src="sponsor.png" alt="JD Solutions Sponsor Logo">
