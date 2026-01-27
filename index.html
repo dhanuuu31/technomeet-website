@@ -198,6 +198,33 @@
     text-align:center;
   }
 }
+/* ======================
+   SPONSOR SECTION
+====================== */
+.sponsor-container {
+  text-align: center;
+  margin-top: 35px;
+  padding-bottom: 25px;
+}
+
+.sponsor-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #444;
+  letter-spacing: 1px;
+}
+
+.sponsor-logos img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.sponsor-logos img:hover {
+  transform: scale(1.1);
+}
 
 </style>
 
@@ -470,6 +497,18 @@
   <div class="scroll-button-container">
     <button class="scroll-button" onclick="window.location.href='registration.html'">REGISTER NOW</button>
   </div>
+
+<!-- Sponsor Section -->
+<div class="sponsor-container">
+  <p class="sponsor-text">Sponsored by</p>
+
+  <div class="sponsor-logos">
+    <a href="https://www.jdsolutionss.com/" target="_blank">
+      <img src="images/sponsor.png" alt="JD Solutions Sponsor Logo">
+    </a>
+  </div>
+</div>
+
 </section>
 
 <!-- ===============================
