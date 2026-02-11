@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Achievements | PGMCOE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f2f5fb;
+    }
+
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+      color: #1e3a8a;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1200px;
+      margin: auto;
+      padding-bottom: 40px;
+    }
+
+    /* Search */
+    .search {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 260px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    th {
+      background: #2563eb;
+      color: white;
+    }
+
+    tr:hover {
+      background: #f1f5ff;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .winner {
+      border-left: 6px solid gold;
+    }
+
+    .runner {
+      border-left: 6px solid silver;
+    }
+
+    /* Feedback */
+    .feedback {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    /* QR Section */
+    .qr-box {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .qr-box img {
+      width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .qr-box a {
+      display: block;
+      margin-top: 10px;
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🏆 Event Achievements Portal</h1>
+  <p>Computer Engineering Department | PGMCOE</p>
+</header>
+
+<div class="container">
+
+  <!-- Search -->
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="Search event name..." />
+  </div>
+
+  <!-- TABLE -->
+  <h2>Event Results</h2>
+
+  <table id="resultTable">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Winner</th>
+        <th>College</th>
+        <th>Runner Up</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Code War</td>
+        <td>Abhijit Chavan</td>
+        <td>PGMCOE Wagholi</td>
+        <td>Rishi Singh</td>
+        <td>09/02/2026</td>
+      </tr>
+
+      <tr>
+        <td>Project Expo</td>
+        <td>Auto Minds Team</td>
+        <td>Sanjivani Polytechnic Kopargaon</td>
+        <td>Innovators Team</td>
+        <td>09/02/2026</td>
+      </tr>
+
+      <tr>
+        <td>Cyber Shield</td>
+        <td>Suraj Sankpal & Sulesh Waghmare</td>
+        <td>PGMCOE Wagholi</td>
+        <td>Piyush Yadav & Shivam Shahane</td>
+        <td>10/02/2026</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Highlights -->
+  <h2>Highlights</h2>
+
+  <div class="cards">
+    <div class="card winner">
+      <h3>🏆 Code War Winner</h3>
+      <p>Abhijit Chavan</p>
+      <small>PGMCOE Wagholi</small>
+    </div>
+
+    <div class="card winner">
+      <h3>🏆 Project Expo Winner</h3>
+      <p>Auto Minds Team</p>
+      <small>Sanjivani Polytechnic</small>
+    </div>
+
+    <div class="card runner">
+      <h3>🥈 Cyber Shield Runner-Up</h3>
+      <p>Piyush Yadav & Shivam Shahane</p>
+    </div>
+  </div>
+
+  <!-- Feedback Form -->
+  <h2>Feedback</h2>
+
+  <div class="feedback">
+    <form onsubmit="submitFeedback(event)">
+      <input type="text" placeholder="Your Name" required><br><br>
+      <textarea rows="4" placeholder="Write your feedback..." required></textarea>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="msg"></p>
+  </div>
+
+  <!-- QR Code Section -->
+  <div class="qr-box">
+    <h3>📱 Quick Feedback via QR</h3>
+    <img src="feedbackq.png" alt="Feedback QR Code">
+    <a href="#" target="_blank">Or Click Here to Give Feedback</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 PGMCOE | All Rights Reserved
+</footer>
+
+<script>
+  // Search filter
+  document.getElementById("searchInput").addEventListener("keyup", function () {
+    let filter = this.value.toLowerCase();
+    let rows = document.querySelectorAll("#resultTable tbody tr");
+
+    rows.forEach(row => {
+      row.style.display =
+        row.innerText.toLowerCase().includes(filter) ? "" : "none";
+    });
+  });
+
+  // Feedback message
+  function submitFeedback(e) {
+    e.preventDefault();
+    document.getElementById("msg").innerText = "Thank you for your feedback!";
+  }
+</script>
+
+</body>
+</html>
