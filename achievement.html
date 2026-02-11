@@ -17,15 +17,114 @@ body{
 }
 
 /* ======================
-   HEADER
+   NAVBAR HEADER (NEW)
 ====================== */
-header{
-  background:#1e3a8a;
+.navbar{
+  background:#0f172a;
   color:white;
-  padding:25px;
-  text-align:center;
+  padding:12px 30px;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* left side */
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.logo{
+  height:40px;
+}
+
+/* links */
+.nav-links{
+  display:flex;
+  gap:22px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.nav-links li{
+  position:relative;
+}
+
+.nav-links a{
+  color:#ffd700;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.2s;
+}
+
+.nav-links a:hover{
+  color:white;
+}
+
+/* dropdown */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:30px;
+  left:0;
+  background:#1e293b;
+  padding:10px;
+  border-radius:6px;
+  min-width:150px;
+}
+
+.dropdown-menu li{
+  padding:6px 0;
+}
+
+.dropdown:hover .dropdown-menu{
+  display:block;
+}
+
+/* register button */
+.Register{
+  background:#2563eb;
+  padding:6px 12px;
+  border-radius:6px;
+  color:white !important;
+}
+
+/* hamburger */
+.menu-toggle{
+  display:none;
+}
+
+.menu-toggle span{
+  display:block;
+  width:25px;
+  height:3px;
+  background:white;
+  margin:5px 0;
+}
+
+/* ======================
+   PAGE TITLE BAR
+====================== */
+.page-title{
+  background:#1e3a8a;
+  color:white;
+  text-align:center;
+  padding:30px 10px;
+}
+
+/* ======================
+   HEADINGS
+====================== */
 h2{
   text-align:center;
   margin-top:40px;
@@ -136,7 +235,7 @@ textarea{
 }
 
 /* ======================
-   BUTTON (FIXED ERROR)
+   BUTTON
 ====================== */
 button{
   margin-top:10px;
@@ -186,15 +285,84 @@ footer{
   margin-top:40px;
 }
 
+/* ======================
+   MOBILE RESPONSIVE
+====================== */
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    right:0;
+    top:60px;
+    background:#0f172a;
+    padding:20px;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+    cursor:pointer;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- ======================
+     NAVBAR HEADER
+====================== -->
+<header class="navbar">
+  <div class="nav-container">
+
+    <div class="nav-left">
+      <img src="technomeet_logo.png" class="logo" alt="Logo">
+      <span class="site-title">TECHNOMEET 2K26</span>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#">Events ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="event.html">All Events</a></li>
+          <li><a href="codewar.html">CodeWar</a></li>
+          <li><a href="cybershield.html">Cyber Shield</a></li>
+          <li><a href="projectexpo.html">Project Expo</a></li>
+        </ul>
+      </li>
+
+      <li><a href="about.html">About</a></li>
+      <li><a href="coordinators.html">Coordinators</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="registration.html" class="Register">Register</a></li>
+    </ul>
+
+  </div>
+</header>
+
+<!-- ======================
+     PAGE TITLE BAR
+====================== -->
+<section class="page-title">
   <h1>🏆 Event Achievements Portal</h1>
   <p>Computer Engineering Department | PGMCOE</p>
-</header>
+</section>
+
 
 <div class="container">
 
@@ -260,19 +428,19 @@ footer{
 <div class="card winner">
 <h3>🏆 Code War Winner</h3>
 <p><b>Abhijit Chavan</b></p>
-<small>PGMCOE Wagholi</small>
+<small>PGMCOE, Wagholi</small>
 </div>
 
 <div class="card winner">
 <h3>🏆 Project Expo Winner</h3>
-<p><b>Auto Minds Team</b></p>
+<p><b>Amey Bhosale, Sanket Barhate, Snehal Gadekar, Prachi Dhamale</b></p>
 <small>Sanjivani Polytechnic</small>
 </div>
 
 <div class="card runner">
-<h3>🥈 Cyber Shield Runner-Up</h3>
-<p><b>Piyush Yadav & Shivam Shahane</b></p>
-<small>MIT Academy</small>
+<h3>🥈 Cyber Shield Winner</h3>
+<p><b>Suraj Sankpal & Sulesh Waghmare</b></p>
+<small>PGMCOE, Wagholi</small>
 </div>
 
 </div>
@@ -325,6 +493,11 @@ function submitFeedback(e){
 e.preventDefault();
 document.getElementById("msg").innerText="Thank you for your feedback!";
 }
+
+// Mobile navbar toggle
+document.getElementById("menuToggle").onclick = function(){
+  document.getElementById("navLinks").classList.toggle("active");
+};
 
 </script>
 
